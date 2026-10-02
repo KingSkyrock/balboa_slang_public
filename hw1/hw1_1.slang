@@ -13,7 +13,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
         return;
     }
     float1 distance = sqrt(pow(center.x - x, 2) + pow(center.y - y, 2));
-    if (distance < radius) {
+    if (distance <= radius) {
         image[tid] = float4(color, 1.0);
     } else {
         image[tid] = float4(0.5, 0.5, 0.5, 1.0);
