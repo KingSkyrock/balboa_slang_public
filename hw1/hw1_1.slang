@@ -8,7 +8,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
     uint width, height;
     image.GetDimensions(width, height);
     uint x = tid.x;
-    uint y = height - tid.y;
+    uint y = height - tid.y - 1;
     if (tid.x >= width || tid.y >= height) {
         return;
     }
@@ -18,6 +18,4 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
     } else {
         image[tid] = float4(0.5, 0.5, 0.5, 1.0);
     }
-    
-    
 }
