@@ -21,45 +21,56 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
         return;
     }
     float radius = stroke_width / 2;
-    for (int i = 0; i < num_polyline - 1; i++) {
-        float2 p0 = polyline[i];
-        float2 p1 = polyline[i + 1];
-        float d = length(p1-p0);
-        float l = dot(p1-p0, q-p0) / d;
-        float2 q_prime = p0 + l * (p1-p0)/ d;
-        if (l > 0 && l < d && length(q_prime - q) < radius) {
-            image[tid] = float4(stroke_color, 1.0);
-            return;
+    int intersections = 0; // Use non-zero value to indicate that the point is inside the polygon
+    for (int i = 0; i < num_polyline - 1 + int(is_closed); i++) {
+        float2 p0, p1;
+        if (is_closed && i == num_polyline - 1) {
+            p0 = polyline[i];
+            p1 = polyline[0];
+        } else {
+            p0 = polyline[i];
+            p1 = polyline[i + 1];
         }
-        // draw caps
-        if (i != 0 && i != num_polyline - 1 || is_closed) {
-            float2 center = float2(p0.x, p0.y);
-            if (length(center - q) < radius) {
+        // draw strokes
+        if (use_stroke_color) {
+            float d = length(p1-p0);
+            float l = dot(p1-p0, q-p0) / d;
+            float2 q_prime = p0 + l * (p1-p0)/ d;
+            if (l > 0 && l < d && length(q_prime - q) < radius) {
                 image[tid] = float4(stroke_color, 1.0);
                 return;
             }
+            // draw caps
+            if (i != 0 && i != num_polyline - 1 || is_closed) {
+                float2 center = float2(p0.x, p0.y);
+                if (length(center - q) < radius) {
+                    image[tid] = float4(stroke_color, 1.0);
+                    return;
+                }
+            }
+        }
+        // fill color
+        if (is_closed && use_fill_color) {
+            float y_diff = p1.y - p0.y;
+            float x_diff = p1.x - p0.x;
+            float t, s;
+            if (y_diff != 0) {
+                t = (q.y - p0.y) / y_diff;
+                s = p0.x + t * x_diff - q.x;
+                if (s >= 0 && t >= 0 && t <= 1) {
+                    if (p0.y < p1.y) {
+                        intersections++;
+                    } else {
+                        intersections--;
+                    }
+                }
+            }
         }
     }
-    if (is_closed) {
-        // Draw stroke to close the polyline
-        float2 p0 = polyline[num_polyline - 1];
-        float2 p1 = polyline[0];
-        float d = length(p1-p0);
-        float l = dot(p1-p0, q-p0) / d;
-        float2 q_prime = p0 + l * (p1-p0)/ d;
-        if (l > 0 && l < d && length(q_prime - q) < radius) {
-            image[tid] = float4(stroke_color, 1.0);
-            return;
-        }
-        // draw cap for p0 point
-        float2 center = float2(p0.x, p0.y);
-        if (length(center - q) < radius) {
-            image[tid] = float4(stroke_color, 1.0);
-            return;
-        }
-        // Now fill the color
-        
-    } 
+    if (intersections != 0) {
+        image[tid] = float4(fill_color, 1.0);
+        return;
+    }
 
     image[tid] = float4(0.5, 0.5, 0.5, 1.0);
     return;
