@@ -57,12 +57,8 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
             if (y_diff != 0) {
                 t = (q.y - p0.y) / y_diff;
                 s = p0.x + t * x_diff - q.x;
-                if (s >= 0 && t >= 0 && t <= 1) {
-                    if (p0.y < p1.y) {
-                        intersections++;
-                    } else {
-                        intersections--;
-                    }
+                if (s >= 0 && (p0.y < p1.y ? (t > 0 && t <= 1) : (t >= 0 && t < 1))) {
+                    intersections += p0.y < p1.y ? 1 : -1;
                 }
             }
         }
