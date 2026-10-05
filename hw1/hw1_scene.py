@@ -190,9 +190,20 @@ def compose_transformation(transforms):
     F = np.eye(3, dtype=np.float32)
 
     for transform in transforms:
-        pass
-        # TODO: your code here
-
+        if "shear_y" in transform:
+            F = F @ np.matrix([[1, 0, 0], [transform["shear_y"][0], 1, 0], [0, 0, 1]])
+        elif "shear_x" in transform:
+            F = F @ np.matrix([[1, transform["shear_x"][0], 0], [0, 1, 0], [0, 0, 1]])
+        elif "scale" in transform:
+            F = F @ np.matrix([[transform["scale"][0], 0, 0], [0, transform["scale"][1], 0], [0, 0, 1]])
+        elif "rotate" in transform:
+            angle = transform["rotate"][0] * np.pi / 180
+            cosAngle = np.cos(angle)
+            sinAngle = np.sin(angle)
+            F = F @ np.matrix([[cosAngle, -sinAngle, 0], [sinAngle, cosAngle, 0], [0, 0, 1]])
+        elif "translate" in transform:
+            F = F @ np.matrix([[1, 0, transform["translate"][0]], [0, 1, transform["translate"][1]], [0, 0, 1]])
+    F = np.asarray(F)
     return F
 
 def interpolate_transformation(transform_keyframes, t):
