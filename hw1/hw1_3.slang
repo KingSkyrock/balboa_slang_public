@@ -81,7 +81,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
         } else if (type == ShapeType.Circle) {
             float2 center = circles[index].center;
             float radius = circles[index].radius;
-            float1 distance = sqrt(pow(center.x - q.x, 2) + pow(center.y - q.y, 2));
+            float distance = length(q - center);
             if (use_stroke && abs(distance - radius) <= stroke_radius) {
                 image[tid] = stroke_rgba;
                 return;

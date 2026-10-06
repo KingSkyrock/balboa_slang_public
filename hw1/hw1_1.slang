@@ -12,7 +12,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
     if (tid.x >= width || tid.y >= height) {
         return;
     }
-    float1 distance = sqrt(pow(center.x - x, 2) + pow(center.y - y, 2));
+    float distance = length(float2(x, y) - center);
     if (distance <= radius) {
         image[tid] = float4(color, 1.0);
     } else {
