@@ -14,9 +14,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                   RWTexture2D<float4> image) {
     uint width, height;
     image.GetDimensions(width, height);
-    uint x = tid.x;
-    uint y = height - tid.y - 1;
-    float2 q = float2(x, y);
+    float2 q = float2(float(tid.x) + 0.5, float(height) - float(tid.y) - 0.5);
     if (tid.x >= width || tid.y >= height) {
         return;
     }

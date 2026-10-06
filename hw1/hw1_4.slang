@@ -14,15 +14,16 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                   RWTexture2D<float4> image) {
     uint width, height;
     image.GetDimensions(width, height);
-    uint x = tid.x;
-    uint y = height - tid.y - 1;
-    float2 q = float2(x, y);
+    float2 q = float2(float(tid.x) + 0.5, float(height) - float(tid.y) - 0.5);
     if (tid.x >= width || tid.y >= height) {
         return;
     }
 
-    image[tid] = float4(background, 1.0);
     for (int i = 0; i < num_shapes; i++) {
+        
+        // Transform using world_to_obj
+        float3 q_transform_ = mul(shapes[i].world_to_obj, float3(q, 1));
+        q = float2(q_transform_.x, q_transform_.y);
 
         // Shape properties
         ShapeType type = shapes[i].type;
@@ -87,7 +88,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
             float2 center = circles[index].center;
             float radius = circles[index].radius - stroke_radius;
             float radius_including_stroke = circles[index].radius + stroke_radius;
-            float1 distance = sqrt(pow(center.x - x, 2) + pow(center.y - y, 2));
+            float1 distance = sqrt(pow(center.x - q.x, 2) + pow(center.y - q.y, 2));
             if (use_fill && distance <= radius) {
                 image[tid] = fill_rgba;
                 return;
@@ -99,4 +100,6 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
             // ignore quadratic beziers
         }
     }
+    image[tid] = float4(background, 1.0);
+    return;
 }
