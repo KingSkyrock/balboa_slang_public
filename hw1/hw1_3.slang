@@ -52,7 +52,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                         return;
                     }
                     // draw caps
-                    if (j != 0 && j != lineEnd || pl.closed) {
+                    if (j != lineStart && j != lineEnd || pl.closed) {
                         float2 center = float2(p0.x, p0.y);
                         if (length(center - q) < stroke_radius) {
                             image[tid] = float4(stroke_rgba);
@@ -80,14 +80,13 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
             }
         } else if (type == ShapeType.Circle) {
             float2 center = circles[index].center;
-            float radius = circles[index].radius - stroke_radius;
-            float radius_including_stroke = circles[index].radius + stroke_radius;
+            float radius = circles[index].radius;
             float1 distance = sqrt(pow(center.x - q.x, 2) + pow(center.y - q.y, 2));
-            if (use_fill && distance <= radius) {
-                image[tid] = fill_rgba;
-                return;
-            } else if (use_stroke && distance > radius && distance <= radius_including_stroke) {
+            if (use_stroke && abs(distance - radius) <= stroke_radius) {
                 image[tid] = stroke_rgba;
+                return;
+            } else if (use_fill && distance <= radius) {
+                image[tid] = fill_rgba;
                 return;
             }
         } else {
