@@ -23,7 +23,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
         
         // Transform using world_to_obj
         float3 q_transform_ = mul(shapes[i].world_to_obj, float3(q, 1));
-        q = float2(q_transform_.x, q_transform_.y);
+        float2 q_obj = float2(q_transform_.x, q_transform_.y);
 
         // Shape properties
         ShapeType type = shapes[i].type;
@@ -51,16 +51,16 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                  // draw strokes
                 if (use_stroke) {
                     float d = length(p1-p0);
-                    float l = dot(p1-p0, q-p0) / d;
+                    float l = dot(p1-p0, q_obj-p0) / d;
                     float2 q_prime = p0 + l * (p1-p0)/ d;
-                    if (l > 0 && l < d && length(q_prime - q) < stroke_radius) {
+                    if (l > 0 && l < d && length(q_prime - q_obj) < stroke_radius) {
                         image[tid] = float4(stroke_rgba);
                         return;
                     }
                     // draw caps
-                    if (j != 0 && j != lineEnd || pl.closed) {
+                    if (j != lineStart && j != lineEnd || pl.closed) {
                         float2 center = float2(p0.x, p0.y);
-                        if (length(center - q) < stroke_radius) {
+                        if (length(center - q_obj) < stroke_radius) {
                             image[tid] = float4(stroke_rgba);
                             return;
                         }
@@ -72,9 +72,9 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                     float x_diff = p1.x - p0.x;
                     float t, s;
                     if (y_diff != 0) {
-                        t = (q.y - p0.y) / y_diff;
-                        s = p0.x + t * x_diff - q.x;
-                        if (s >= 0 && ((p0.y >= q.y) != (p1.y >= q.y))) {
+                        t = (q_obj.y - p0.y) / y_diff;
+                        s = p0.x + t * x_diff - q_obj.x;
+                        if (s >= 0 && ((p0.y >= q_obj.y) != (p1.y >= q_obj.y))) {
                             intersections += p0.y < p1.y ? 1 : -1;
                         }
                     }
@@ -86,14 +86,13 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
             }
         } else if (type == ShapeType.Circle) {
             float2 center = circles[index].center;
-            float radius = circles[index].radius - stroke_radius;
-            float radius_including_stroke = circles[index].radius + stroke_radius;
-            float1 distance = sqrt(pow(center.x - q.x, 2) + pow(center.y - q.y, 2));
-            if (use_fill && distance <= radius) {
-                image[tid] = fill_rgba;
-                return;
-            } else if (use_stroke && distance > radius && distance <= radius_including_stroke) {
+            float radius = circles[index].radius;
+            float distance = length(q_obj - center);
+            if (use_stroke && abs(distance - radius) <= stroke_radius) {
                 image[tid] = stroke_rgba;
+                return;
+            } else if (use_fill && distance <= radius) {
+                image[tid] = fill_rgba;
                 return;
             }
         } else {

@@ -191,18 +191,18 @@ def compose_transformation(transforms):
 
     for transform in transforms:
         if "shear_y" in transform:
-            F = F @ np.matrix([[1, 0, 0], [transform["shear_y"][0], 1, 0], [0, 0, 1]])
+            F = np.matrix([[1, 0, 0], [transform["shear_y"][0], 1, 0], [0, 0, 1]]) @ F
         elif "shear_x" in transform:
-            F = F @ np.matrix([[1, transform["shear_x"][0], 0], [0, 1, 0], [0, 0, 1]])
+            F = np.matrix([[1, transform["shear_x"][0], 0], [0, 1, 0], [0, 0, 1]]) @ F
         elif "scale" in transform:
-            F = F @ np.matrix([[transform["scale"][0], 0, 0], [0, transform["scale"][1], 0], [0, 0, 1]])
+            F = np.matrix([[transform["scale"][0], 0, 0], [0, transform["scale"][1], 0], [0, 0, 1]]) @ F
         elif "rotate" in transform:
             angle = transform["rotate"][0] * np.pi / 180
             cosAngle = np.cos(angle)
             sinAngle = np.sin(angle)
-            F = F @ np.matrix([[cosAngle, -sinAngle, 0], [sinAngle, cosAngle, 0], [0, 0, 1]])
+            F = np.matrix([[cosAngle, -sinAngle, 0], [sinAngle, cosAngle, 0], [0, 0, 1]]) @ F
         elif "translate" in transform:
-            F = F @ np.matrix([[1, 0, transform["translate"][0]], [0, 1, transform["translate"][1]], [0, 0, 1]])
+            F = np.matrix([[1, 0, transform["translate"][0]], [0, 1, transform["translate"][1]], [0, 0, 1]]) @ F
     F = np.asarray(F)
     return F
 
