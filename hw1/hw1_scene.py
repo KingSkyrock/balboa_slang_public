@@ -208,6 +208,22 @@ def compose_transformation(transforms):
 
 def interpolate_transformation(transform_keyframes, t):
     # TODO: your code here
+    interpolated = []
+    for i, frame1 in enumerate(transform_keyframes):
+        if i == 0:
+            continue
+        frame0 = transform_keyframes[i - 1]
+        t0 = frame0["time"] 
+        t1 = frame1["time"]
+        if t <= t1 and t >= t0:
+            w = (t - t0) / (t1 - t0)
+            for j, operation in enumerate(frame1["transform"]):
+                name = list(operation)[0]
+                vals = np.array(operation[name])
+                vals0 = np.array(frame0["transform"][j][name])
+                new_vals = (1-w) * vals0 + w * vals 
+                interpolated.append({f"{name}": new_vals});
+            return interpolated
 
     # Should never happen?
     assert False
