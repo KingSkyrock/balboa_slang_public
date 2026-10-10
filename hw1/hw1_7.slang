@@ -47,6 +47,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                     int lineStart = pl.pts_begin;
                     int lineEnd = pl.pts_end - 1;
                     int intersections = 0;
+                    bool stroke_hit = false;
                     for (int j = lineStart; j < lineEnd + int(pl.closed); j++) {
                         float2 p0, p1;
                         if (pl.closed && j == lineEnd) {
@@ -62,13 +63,13 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             float l = dot(p1-p0, q_obj-p0) / d;
                             float2 q_prime = p0 + l * (p1-p0)/ d;
                             if (l > 0 && l < d && length(q_prime - q_obj) < stroke_radius) {
-                                subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                                stroke_hit = true;
                             }
                             // draw caps
                             if (j != lineStart && j != lineEnd || pl.closed) {
                                 float2 center = float2(p0.x, p0.y);
                                 if (length(center - q_obj) < stroke_radius) {
-                                    subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                                    stroke_hit = true;
                                 }
                             }
                         }
@@ -86,17 +87,23 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             }
                         }
                     }
+                    // fill first
                     if (intersections != 0) {
                         subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    }
+                    // then stroke on top
+                    if (stroke_hit) {
+                        subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
                     }
                 } else if (type == ShapeType.Circle) {
                     float2 center = circles[index].center;
                     float radius = circles[index].radius;
                     float distance = length(q_obj - center);
+                    if (use_fill && distance <= radius) {
+                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    }
                     if (use_stroke && abs(distance - radius) <= stroke_radius) {
                         subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
-                    } else if (use_fill && distance <= radius) {
-                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
                     }
                 } else {
                     // ignore quadratic beziers
