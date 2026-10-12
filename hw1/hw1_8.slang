@@ -99,7 +99,6 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                         subpixel_color = fill_rgba * fill_alpha + subpixel_color * (1 - fill_alpha);
                     }
                 } else {
-                    // IMPORTANT this is copied polylines, is NOT complete
                     QuadraticBezier qb = quadratic_beziers[index];
                     int curveStart = qb.pts_begin;
                     int curveEnd = qb.pts_end - 2;
@@ -115,21 +114,33 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             p1 = points[j + 1];
                             p2 = points[j + 2];
                         }
-                        // [IN PROGRESS] draw strokes
+                        // draw strokes
                         if (use_stroke) {
-                            float d = length(p1-p0);
-                            float l = dot(p1-p0, q_obj-p0) / d;
-                            float2 q_prime = p0 + l * (p1-p0)/ d;
-                            if (l > 0 && l < d && length(q_prime - q_obj) < stroke_radius) {
+                            float a = 2 * dot(p0 - 2 * p1 + p2, p0 - 2 * p1 + p2);
+                            float b = 3 * dot(p0 - 2 * p1 + p2, 2 * (p1 - p0));
+                            float c = dot(2 * (p1 - p0), 2 * (p1 - p0)) + 2 * dot(p0 - 2 * p1 + p2, p0 - q_obj);
+                            float d = dot(2 * (p1 - p0), p0 - q_obj);
+                            float3 roots;
+                            int cube_roots = solve_cubic(a, b, c, d, roots);
+                            float t;
+                            float min_distance = min(length(p0 - q_obj), length(p2 - q_obj));
+                            for (int k = 0; k < cube_roots; k++) {
+                                t = roots[k];
+                                if (t >=0 && t <= 1) {
+                                    float2 point_on_curve = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
+                                    min_distance = min(min_distance, length(point_on_curve - q_obj));
+                                }
+                            } 
+                            if (min_distance < stroke_radius) {
                                 subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
                             }
-                            // draw caps
-                            if (j != curveStart && j != curveEnd || qb.closed) {
-                                float2 center = float2(p0.x, p0.y);
-                                if (length(center - q_obj) < stroke_radius) {
-                                    subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
-                                }
-                            }
+                            // draw caps - not implemented for bezier because it seems like sample image is not rounded
+                            // if (j != curveStart && j != curveEnd || qb.closed) {
+                            //     float2 center = float2(p0.x, p0.y);
+                            //     if (length(center - q_obj) < stroke_radius) {
+                            //         subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                            //     }
+                            // }
                         }
                         // fill color
                         if (qb.closed && use_fill) {
@@ -142,7 +153,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             if (has_roots) {
                                 for (int k = 0; k < 2; k++) {
                                     t = roots[k];
-                                    if (t >=0 && t <= 1) {
+                                    if (t >=0 && t < 1) {
                                         float2 point_on_curve = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
                                         if (point_on_curve.x >= q_obj.x) {
                                             dydt = b.y + 2.0 * a.y * t;
@@ -150,11 +161,9 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                                                 intersections += dydt > 0 ? 1 : -1;
                                             }
                                         }
-                                        
                                     }
                                 }    
                             }
-                            
                         }
                     }
                     if (intersections != 0) {
