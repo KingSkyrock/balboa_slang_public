@@ -102,19 +102,20 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                     // IMPORTANT this is copied polylines, is NOT complete
                     QuadraticBezier qb = quadratic_beziers[index];
                     int curveStart = qb.pts_begin;
-                    int curveEnd = qb.pts_end - 1;
+                    int curveEnd = qb.pts_end - 2;
                     int intersections = 0;
-                    for (int j = curveStart; j < curveEnd + int(qb.closed); j++) {
-                        /////
-                        float2 p0, p1;
-                        if (pl.closed && j == lineEnd) {
+                    for (int j = curveStart; j < curveEnd + int(qb.closed); j += 2) {
+                        float2 p0, p1, p2;
+                        if (qb.closed && j == curveEnd) {
                             p0 = points[j];
-                            p1 = points[lineStart];
+                            p1 = points[j + 1];
+                            p2 = points[curveStart];
                         } else {
                             p0 = points[j];
                             p1 = points[j + 1];
+                            p2 = points[j + 2];
                         }
-                        // draw strokes
+                        // [IN PROGRESS] draw strokes
                         if (use_stroke) {
                             float d = length(p1-p0);
                             float l = dot(p1-p0, q_obj-p0) / d;
@@ -123,7 +124,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                                 subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
                             }
                             // draw caps
-                            if (j != lineStart && j != lineEnd || pl.closed) {
+                            if (j != curveStart && j != curveEnd || qb.closed) {
                                 float2 center = float2(p0.x, p0.y);
                                 if (length(center - q_obj) < stroke_radius) {
                                     subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
@@ -131,17 +132,29 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             }
                         }
                         // fill color
-                        if (pl.closed && use_fill) {
-                            float y_diff = p1.y - p0.y;
-                            float x_diff = p1.x - p0.x;
-                            float t, s;
-                            if (y_diff != 0) {
-                                t = (q_obj.y - p0.y) / y_diff;
-                                s = p0.x + t * x_diff - q_obj.x;
-                                if (s >= 0 && ((p0.y >= q_obj.y) != (p1.y >= q_obj.y))) {
-                                    intersections += p0.y < p1.y ? 1 : -1;
-                                }
+                        if (qb.closed && use_fill) {
+                            float2 a = p0 - 2 * p1 + p2;
+                            float2 b = 2 * (p1 - p0);
+                            float2 c = p0 - q_obj;
+                            float2 roots;
+                            bool has_roots = solve_quadratic(a.y, b.y, c.y, roots);
+                            float t, dydt;
+                            if (has_roots) {
+                                for (int k = 0; k < 2; k++) {
+                                    t = roots[k];
+                                    if (t >=0 && t <= 1) {
+                                        float2 point_on_curve = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
+                                        if (point_on_curve.x >= q_obj.x) {
+                                            dydt = b.y + 2.0 * a.y * t;
+                                            if (dydt != 0) {
+                                                intersections += dydt > 0 ? 1 : -1;
+                                            }
+                                        }
+                                        
+                                    }
+                                }    
                             }
+                            
                         }
                     }
                     if (intersections != 0) {
