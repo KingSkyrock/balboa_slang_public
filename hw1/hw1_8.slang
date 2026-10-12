@@ -20,10 +20,10 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
     float subpixel_division = 1.0 / samples_per_axis;
     float2 q = float2(float(tid.x) + subpixel_division / 2, 
                       float(height) - float(tid.y) - 1 + subpixel_division / 2);
-    float4 final_color = float4(0);
+    float3 final_color = float3(0);
     for (int subpixel_x = 0; subpixel_x < samples_per_axis; subpixel_x++) {
         for (int subpixel_y = 0; subpixel_y < samples_per_axis; subpixel_y++) {
-            float4 subpixel_color = float4(background, 1.0); // default is bg color
+            float3 subpixel_color = float3(background); // default is bg color
             float2 q_sub = float2(q.x + subpixel_division * subpixel_x,
                            q.y + subpixel_division * subpixel_y);
             for (int i = num_shapes - 1; i >= 0; i--) {
@@ -35,10 +35,10 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                 ShapeType type = shapes[i].type;
                 int index = shapes[i].index;
                 float stroke_radius = shapes[i].stroke_width / 2;
-                float4 fill_rgba = shapes[i].fill_rgba;
-                float4 stroke_rgba = shapes[i].stroke_rgba;
-                float fill_alpha = fill_rgba.a;
-                float stroke_alpha = stroke_rgba.a;
+                float3 fill_rgb = shapes[i].fill_rgba.rgb;
+                float3 stroke_rgb = shapes[i].stroke_rgba.rgb;
+                float fill_alpha = shapes[i].fill_rgba.a;
+                float stroke_alpha = shapes[i].stroke_rgba.a;
                 bool use_stroke = shapes[i].use_stroke;
                 bool use_fill = shapes[i].use_fill;
 
@@ -47,6 +47,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                     int lineStart = pl.pts_begin;
                     int lineEnd = pl.pts_end - 1;
                     int intersections = 0;
+                    bool stroke_hit = false;
                     for (int j = lineStart; j < lineEnd + int(pl.closed); j++) {
                         float2 p0, p1;
                         if (pl.closed && j == lineEnd) {
@@ -62,13 +63,12 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             float l = dot(p1-p0, q_obj-p0) / d;
                             float2 q_prime = p0 + l * (p1-p0)/ d;
                             if (l > 0 && l < d && length(q_prime - q_obj) < stroke_radius) {
-                                subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                                stroke_hit = true;
                             }
                             // draw caps
-                            if (j != lineStart && j != lineEnd || pl.closed) {
-                                float2 center = float2(p0.x, p0.y);
-                                if (length(center - q_obj) < stroke_radius) {
-                                    subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                            if (j != lineStart || pl.closed) {
+                                if (length(p0 - q_obj) < stroke_radius) {
+                                    stroke_hit = true;
                                 }
                             }
                         }
@@ -86,23 +86,30 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             }
                         }
                     }
+                    // fill first
                     if (intersections != 0) {
-                        subpixel_color = fill_rgba * fill_alpha + subpixel_color * (1 - fill_alpha);
+                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    }
+                    // then stroke on top
+                    if (stroke_hit) {
+                        subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
                     }
                 } else if (type == ShapeType.Circle) {
                     float2 center = circles[index].center;
                     float radius = circles[index].radius;
                     float distance = length(q_obj - center);
-                    if (use_stroke && abs(distance - radius) <= stroke_radius) {
-                        subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
-                    } else if (use_fill && distance <= radius) {
-                        subpixel_color = fill_rgba * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    if (use_fill && distance <= radius) {
+                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
                     }
-                } else {
+                    if (use_stroke && abs(distance - radius) <= stroke_radius) {
+                        subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                    }
+                } else if (type == ShapeType.QuadraticBezier) {
                     QuadraticBezier qb = quadratic_beziers[index];
                     int curveStart = qb.pts_begin;
                     int curveEnd = qb.pts_end - 2;
                     int intersections = 0;
+                    bool stroke_hit = false;
                     for (int j = curveStart; j < curveEnd + int(qb.closed); j += 2) {
                         float2 p0, p1, p2;
                         if (qb.closed && j == curveEnd) {
@@ -123,24 +130,21 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             float3 roots;
                             int cube_roots = solve_cubic(a, b, c, d, roots);
                             float t;
-                            float min_distance = min(length(p0 - q_obj), length(p2 - q_obj));
                             for (int k = 0; k < cube_roots; k++) {
-                                t = roots[k];
-                                if (t >=0 && t <= 1) {
+                                float t = roots[k];
+                                if (t >= 0 && t <= 1) {
                                     float2 point_on_curve = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
-                                    min_distance = min(min_distance, length(point_on_curve - q_obj));
+                                    if (length(point_on_curve - q_obj) < stroke_radius) {
+                                        stroke_hit = true;
+                                    }
                                 }
-                            } 
-                            if (min_distance < stroke_radius) {
-                                subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
                             }
-                            // draw caps - not implemented for bezier because it seems like sample image is not rounded
-                            // if (j != curveStart && j != curveEnd || qb.closed) {
-                            //     float2 center = float2(p0.x, p0.y);
-                            //     if (length(center - q_obj) < stroke_radius) {
-                            //         subpixel_color = stroke_rgba * stroke_alpha + subpixel_color * (1 - stroke_alpha);
-                            //     }
-                            // }
+                            // draw caps
+                            if (j != curveStart || qb.closed) {
+                                if (length(p0 - q_obj) < stroke_radius) {
+                                    stroke_hit = true;
+                                }
+                            }
                         }
                         // fill color
                         if (qb.closed && use_fill) {
@@ -166,13 +170,18 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             }
                         }
                     }
+                    // fill first
                     if (intersections != 0) {
-                        subpixel_color = fill_rgba * fill_alpha + subpixel_color * (1 - fill_alpha);
+                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    }
+                    // then stroke on top
+                    if (stroke_hit) {
+                        subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
                     }
                 }
             }
             final_color += subpixel_color;
         }
     }
-    image[tid] = final_color * subpixel_division * subpixel_division;
+    image[tid] = float4(final_color * subpixel_division * subpixel_division, 1.0);
 }
