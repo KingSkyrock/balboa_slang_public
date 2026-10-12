@@ -157,6 +157,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
                             if (has_roots) {
                                 for (int k = 0; k < 2; k++) {
                                     t = roots[k];
+                                    if (k == 1 && roots[1] == roots[0]) break; // double roots
                                     if (t >=0 && t < 1) {
                                         float2 point_on_curve = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
                                         if (point_on_curve.x >= q_obj.x) {
