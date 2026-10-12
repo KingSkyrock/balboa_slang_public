@@ -1,0 +1,77 @@
+{
+    "resolution": [800, 450],
+    "background": [0.12, 0.12, 0.16],
+    "objects": [
+        {
+            "type": "circle",
+            "center": [400, 225],
+            "radius": 55,
+            "fill_rgba": [0.95, 0.85, 0.15, 1.0],
+            "stroke_rgba": [0.05, 0.05, 0.05, 1.0],
+            "stroke_width": 8
+        },
+        {
+            "type": "polyline",
+            "points": [90, 225, 710, 225],
+            "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+            "stroke_width": 30
+        },
+        {
+            "type": "circle",
+            "center": [260, 225],
+            "radius": 110,
+            "fill_rgba": [0.15, 0.4, 0.9, 1.0],
+            "stroke_rgba": [0.05, 0.05, 0.05, 1.0],
+            "stroke_width": 5
+        },
+        {
+            "type": "polyline",
+            "points": [
+                400, 60,
+                540, 225,
+                400, 390,
+                260, 225
+            ],
+            "closed": true,
+            "fill_rgba": [0.9, 0.2, 0.2, 1.0],
+            "stroke_rgba": [0.05, 0.05, 0.05, 1.0],
+            "stroke_width": 8
+        },
+        {
+            "type": "triangle",
+            "p0": [500, 90],
+            "p1": [760, 225],
+            "p2": [500, 360],
+            "fill_rgba": [0.2, 0.85, 0.3, 1.0],
+            "stroke_rgba": [0.05, 0.05, 0.05, 1.0],
+            "stroke_width": 6
+        },
+        {
+            "type": "circle",
+            "center": [610, 225],
+            "radius": 90,
+            "fill_rgba": [0.65, 0.25, 0.85, 1.0]
+        },
+        {
+            "type": "polyline",
+            "points": [
+                80, 80,
+                180, 350,
+                300, 100,
+                420, 340,
+                560, 120,
+                720, 330
+            ],
+            "stroke_rgba": [1.0, 0.55, 0.1, 1.0],
+            "stroke_width": 14
+        },
+        {
+            "type": "rectangle",
+            "p_min": [40, 40],
+            "p_max": [760, 410],
+            "fill_rgba": [0.25, 0.3, 0.35, 1.0],
+            "stroke_rgba": [0.8, 0.8, 0.8, 1.0],
+            "stroke_width": 4
+        }
+    ]
+}

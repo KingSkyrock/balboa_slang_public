@@ -1,0 +1,109 @@
+{
+  "resolution": [800, 500],
+  "background": [0.08, 0.09, 0.12],
+  "samples_per_axis": 4,
+
+  "objects": [
+    {
+      "type": "quadratic_bezier",
+      "points": [
+        60, 420,
+        195, 175,
+        340, 420
+      ],
+      "closed": false,
+      "stroke_rgba": [1.0, 0.35, 0.55, 1.0],
+      "stroke_width": 8
+    },
+
+    {
+      "type": "quadratic_bezier",
+      "points": [
+        60, 340,
+        200, 344,
+        340, 340
+      ],
+      "closed": false,
+      "stroke_rgba": [0.30, 0.90, 1.0, 1.0],
+      "stroke_width": 5
+    },
+
+    {
+      "type": "quadratic_bezier",
+      "points": [
+        60, 260,
+        130, 340,
+        200, 260,
+        270, 180,
+        340, 260
+      ],
+      "closed": false,
+      "stroke_rgba": [0.45, 0.95, 0.55, 1.0],
+      "stroke_width": 7
+    },
+
+    {
+      "type": "quadratic_bezier",
+      "points": [
+        60, 105,
+        130, 210,
+        200, 105,
+        200, 15,
+        340, 105
+      ],
+      "closed": false,
+      "stroke_rgba": [1.0, 0.78, 0.25, 1.0],
+      "stroke_width": 7
+    },
+
+    {
+      "type": "quadratic_bezier",
+      "points": [
+        500, 180,
+        700, 100,
+        730, 250,
+        700, 400,
+        500, 320,
+        640, 300,
+        620, 250,
+        640, 200
+      ],
+      "closed": true,
+      "fill_rgba": [0.45, 0.35, 0.95, 0.65],
+      "stroke_rgba": [0.90, 0.88, 1.0, 1.0],
+      "stroke_width": 5
+    },
+
+    {
+      "type": "quadratic_bezier",
+      "points": [
+        500, 70,
+        610, 155,
+        720, 70,
+        610, -15
+      ],
+      "closed": true,
+      "fill_rgba": [0.95, 0.40, 0.30, 0.70],
+      "stroke_rgba": [1.0, 0.85, 0.80, 1.0],
+      "stroke_width": 4
+    },
+
+    {
+      "type": "quadratic_bezier",
+      "points": [
+        0, 0,
+        55, 115,
+        110, 0
+      ],
+      "closed": false,
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 6,
+      "transform": [
+        {"scale": [1.15, 0.65]},
+        {"shear_x": [0.25]},
+        {"rotate": [-18]},
+        {"translate": [395, 85]}
+      ]
+    }
+  ]
+}

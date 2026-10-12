@@ -1,0 +1,40 @@
+{
+    "resolution": [800, 450],
+    "background": [
+        0.5, 0.5, 0.5
+    ],
+    "objects": [
+        {
+            "type": "polyline",
+            "points": [440, 300, 600, 220, 500, 50, 600, 400, 750, 200],
+            "fill_rgba": [0.8, 0.8, 0.15, 1.0],
+            "closed": true
+        },
+        {
+            "type": "polyline",
+            "points": [200, 400, 300, 50, 600, 250, 750, 300],
+            "stroke_rgba": [0.1, 0.15, 0.1, 1.0],
+            "stroke_width": 20,
+            "closed": false
+        },
+        {
+            "type": "rectangle",
+            "p_min": [70, 150],
+            "p_max": [300, 350],
+            "fill_rgba": [0.3, 0.6, 0.7, 1.0]
+        },
+        {
+            "type": "triangle",
+            "p0": [350, 20],
+            "p1": [700, 800],
+            "p2": [200, 450],
+            "fill_rgba": [0.8, 0.2, 0.3, 1.0]
+        },
+        {
+            "type": "circle",
+            "center": [350, 225],
+            "radius": 250,
+            "fill_rgba": [0.4, 0.8, 0.3, 1.0]
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "resolution": [640, 360],
+    "background": [
+        0.3, 0.3, 0.3
+    ],
+    "objects": [
+        {
+            "type": "polyline",
+            "points": [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 2.0, 1.0],
+            "fill_rgba": [0.8, 0.7, 0.8, 1.0],
+            "stroke_rgba": [0.15, 0.1, 0.15, 1.0],
+            "stroke_width": 0.01,
+            "closed": true,
+            "transform": [
+                {"scale": [160, 120]},
+                {"translate": [300, 50]}
+            ]
+        },
+        {
+            "type": "polyline",
+            "points": [0.0, 0.0, 1.0, 0.0, 1.0, 2.0],
+            "stroke_rgba": [0.9, 0.9, 0.15, 1.0],
+            "stroke_width": 1,
+            "closed": false,
+            "transform": [
+                {"scale": [60, 60]},
+                {"rotate": [-30]},
+                {"translate": [450, 200]}
+            ]
+        },
+        {
+            "type": "triangle",
+            "fill_rgba": [0.1, 0.1, 0.9, 1.0],
+            "transform": [
+                {"scale": [100, 200]},
+                {"shear_y": [1]},
+                {"translate": [350, 100]}
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.95, 0.1, 0.9, 1.0],
+            "transform": [
+                {"scale": [200, 200]},
+                {"shear_x": [-1]},
+                {"translate": [100, 50]}
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [0.1, 0.3, 0.9, 1.0],
+            "transform": [
+                {"scale": [200, 100]},
+                {"rotate": [45]},
+                {"translate": [240, 180]}
+            ]
+        }
+    ]
+}

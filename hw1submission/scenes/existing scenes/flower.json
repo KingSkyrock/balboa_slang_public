@@ -1,0 +1,76 @@
+{
+    "resolution": [600, 500],
+    "background": [0.95, 0.95, 1.0],
+    "objects": [
+        {
+            "type": "quadratic_bezier",
+            "points": [0, 0, -40, 45, 0, 120, 40, 45],
+            "closed": true,
+            "fill_rgba": [1.0, 0.3, 0.5, 0.55],
+            "stroke_rgba": [0.15, 0.15, 0.15, 1.0],
+            "stroke_width": 4,
+            "transform": [
+                {"rotate": [0]},
+                {"translate": [300, 220]}
+            ]
+        },
+        {
+            "type": "quadratic_bezier",
+            "points": [0, 0, -40, 45, 0, 120, 40, 45],
+            "closed": true,
+            "fill_rgba": [1.0, 0.6, 0.2, 0.55],
+            "stroke_rgba": [0.15, 0.15, 0.15, 1.0],
+            "stroke_width": 4,
+            "transform": [
+                {"rotate": [72]},
+                {"translate": [300, 220]}
+            ]
+        },
+        {
+            "type": "quadratic_bezier",
+            "points": [0, 0, -40, 45, 0, 120, 40, 45],
+            "closed": true,
+            "fill_rgba": [0.9, 0.85, 0.2, 0.55],
+            "stroke_rgba": [0.15, 0.15, 0.15, 1.0],
+            "stroke_width": 4,
+            "transform": [
+                {"rotate": [144]},
+                {"translate": [300, 220]}
+            ]
+        },
+        {
+            "type": "quadratic_bezier",
+            "points": [0, 0, -40, 45, 0, 120, 40, 45],
+            "closed": true,
+            "fill_rgba": [0.3, 0.8, 0.4, 0.55],
+            "stroke_rgba": [0.15, 0.15, 0.15, 1.0],
+            "stroke_width": 4,
+            "transform": [
+                {"rotate": [216]},
+                {"translate": [300, 220]}
+            ]
+        },
+        {
+            "type": "quadratic_bezier",
+            "points": [0, 0, -40, 45, 0, 120, 40, 45],
+            "closed": true,
+            "fill_rgba": [0.35, 0.55, 1.0, 0.55],
+            "stroke_rgba": [0.15, 0.15, 0.15, 1.0],
+            "stroke_width": 4,
+            "transform": [
+                {"rotate": [288]},
+                {"translate": [300, 220]}
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [0.95, 0.8, 0.15, 0.95],
+            "stroke_rgba": [0.15, 0.15, 0.15, 1.0],
+            "stroke_width": 0.04,
+            "transform": [
+                {"scale": [38, 38]},
+                {"translate": [300, 220]}
+            ]
+        }
+    ]
+}

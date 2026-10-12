@@ -1,0 +1,123 @@
+{
+    "resolution": [600, 600],
+    "background": [
+        0.4, 0.65, 0.8
+    ],
+    "objects": [
+        {
+            "type": "polyline",
+            "points": [
+                120, 100,  150, 130,  180, 100,
+                150, 130,  150, 180,
+                120, 150,  150, 180,
+                180, 150,  150, 180,
+                150, 195
+            ],
+            "closed": false,
+            "stroke_rgba": [0.02, 0.02, 0.03, 1.0],
+            "stroke_width": 4
+        },
+        {
+            "type": "circle",
+            "radius": 20,
+            "stroke_rgba": [0.02, 0.02, 0.03, 1.0],
+            "stroke_width": 4,
+            "transform": [
+                {"translate": [150, 215]}
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.1, 0.5, 0.1, 1.0],
+            "transform": [
+                {"scale": [600, 100]},
+                {"translate": [0, 0]}
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [0.1, 0.3, 0.1, 1.0],
+            "transform": [
+                {"scale": [80, 70]},
+                {"translate": [400, 250]}
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [0.1, 0.3, 0.1, 1.0],
+            "transform": [
+                {"scale": [80, 70]},
+                {"translate": [440, 270]}
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.17, 0.08, 0.02, 1.0],
+            "transform": [
+                {"scale": [40, 150]},
+                {"translate": [400, 100]}
+            ]
+        },
+        {
+            "type": "quadratic_bezier",
+            "points": [
+                130, 440, 150, 470, 180, 435, 210, 470, 230, 440
+            ],
+            "closed": false,
+            "stroke_rgba": [0.02, 0.02, 0.03, 1.0],
+            "stroke_width": 4
+        },
+        {
+            "type": "quadratic_bezier",
+            "points": [
+                165, 465, 185, 495, 215, 460, 245, 495, 265, 465
+            ],
+            "closed": false,
+            "stroke_rgba": [0.02, 0.02, 0.03, 1.0],
+            "stroke_width": 4
+        },
+        {
+            "type": "circle",
+            "radius": 45,
+            "fill_rgba": [1, 1, 1, 0.5],
+            "stroke_rgba": [1, 1, 1, 0.8],
+            "stroke_width": 3,
+            "transform": [
+                {"scale": [1.5, 1]},
+                {"translate": [400, 480]}
+            ]
+        },
+        {
+            "type": "circle",
+            "radius": 45,
+            "fill_rgba": [1, 1, 1, 0.5],
+            "stroke_rgba": [1, 1, 1, 0.8],
+            "stroke_width": 3,
+            "transform": [
+                {"scale": [1.5, 1]},
+                {"translate": [430, 520]}
+            ]
+        },
+        {
+            "type": "circle",
+            "radius": 45,
+            "fill_rgba": [1, 1, 1, 0.5],
+            "stroke_rgba": [1, 1, 1, 0.8],
+            "stroke_width": 3,
+            "transform": [
+                {"scale": [1.5, 1]},
+                {"translate": [470, 470]}
+            ]
+        },
+        {
+            "type": "circle",
+            "radius": 45,
+            "fill_rgba": [1.0, 0.7, 0.0, 1.0],
+            "stroke_rgba": [0.9, 0.2, 0, 1.0],
+            "stroke_width": 5,
+            "transform": [
+                {"translate": [520, 520]}
+            ]
+        }
+    ]
+}

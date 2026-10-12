@@ -1,0 +1,335 @@
+{
+  "resolution": [800, 500],
+  "background": [0.08, 0.08, 0.10],
+  "samples_per_axis": 4,
+
+  "objects": [
+    {
+      "type": "polyline",
+      "points": [135, 355, 240.000, 355.000],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 233.668, 390.912],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 215.435, 422.493],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 187.500, 445.933],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 153.233, 458.405],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 116.767, 458.405],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 82.500, 445.933],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 54.565, 422.493],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 36.332, 390.912],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 30.000, 355.000],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 36.332, 319.088],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 54.565, 287.507],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 82.500, 264.067],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 116.767, 251.595],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 153.233, 251.595],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 187.500, 264.067],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 215.435, 287.507],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [135, 355, 233.668, 319.088],
+      "stroke_rgba": [0.95, 0.95, 0.95, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+
+    {
+      "type": "circle",
+      "center": [135, 355],
+      "radius": 4.0,
+      "fill_rgba": [1.0, 0.45, 0.35, 1.0]
+    },
+
+    {
+      "type": "polyline",
+      "points": [285, 445, 535, 447.5],
+      "stroke_rgba": [1.0, 0.75, 0.25, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [285, 420, 535, 426.25],
+      "stroke_rgba": [1.0, 0.75, 0.25, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [285, 395, 535, 407.5],
+      "stroke_rgba": [1.0, 0.75, 0.25, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [285, 370, 535, 395.0],
+      "stroke_rgba": [1.0, 0.75, 0.25, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+
+    {
+      "type": "polyline",
+      "points": [300, 315.00, 520, 345.00],
+      "stroke_rgba": [0.30, 0.85, 1.0, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [300, 285.25, 520, 315.25],
+      "stroke_rgba": [0.30, 0.85, 1.0, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [300, 255.50, 520, 285.50],
+      "stroke_rgba": [0.30, 0.85, 1.0, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+    {
+      "type": "polyline",
+      "points": [300, 225.75, 520, 255.75],
+      "stroke_rgba": [0.30, 0.85, 1.0, 1.0],
+      "stroke_width": 1.0,
+      "closed": false
+    },
+
+    {
+      "type": "circle",
+      "center": [615.0, 415.0],
+      "radius": 1.0,
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0]
+    },
+    {
+      "type": "circle",
+      "center": [650.0, 415.0],
+      "radius": 2.0,
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0]
+    },
+    {
+      "type": "circle",
+      "center": [690.0, 415.0],
+      "radius": 3.0,
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0]
+    },
+    {
+      "type": "circle",
+      "center": [735.0, 415.0],
+      "radius": 5.0,
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0]
+    },
+
+    {
+      "type": "circle",
+      "center": [620.0, 355.0],
+      "radius": 8.0,
+      "stroke_rgba": [0.75, 0.45, 1.0, 1.0],
+      "stroke_width": 1.0
+    },
+    {
+      "type": "circle",
+      "center": [665.25, 355.0],
+      "radius": 8.0,
+      "stroke_rgba": [0.75, 0.45, 1.0, 1.0],
+      "stroke_width": 1.0
+    },
+    {
+      "type": "circle",
+      "center": [710.50, 355.0],
+      "radius": 8.0,
+      "stroke_rgba": [0.75, 0.45, 1.0, 1.0],
+      "stroke_width": 1.0
+    },
+    {
+      "type": "circle",
+      "center": [755.75, 355.0],
+      "radius": 8.0,
+      "stroke_rgba": [0.75, 0.45, 1.0, 1.0],
+      "stroke_width": 1.0
+    },
+
+    {
+      "type": "rectangle",
+      "p_min": [590.0, 100.0],
+      "p_max": [590.4, 190.0],
+      "fill_rgba": [1.0, 0.35, 0.35, 1.0]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [620.0, 100.0],
+      "p_max": [620.8, 190.0],
+      "fill_rgba": [1.0, 0.55, 0.25, 1.0]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [650.0, 100.0],
+      "p_max": [651.2, 190.0],
+      "fill_rgba": [0.95, 0.85, 0.25, 1.0]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [680.0, 100.0],
+      "p_max": [682.0, 190.0],
+      "fill_rgba": [0.40, 0.90, 0.45, 1.0]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [710.0, 100.0],
+      "p_max": [713.0, 190.0],
+      "fill_rgba": [0.35, 0.75, 1.0, 1.0]
+    },
+
+    {
+      "type": "rectangle",
+      "p_min": [-0.4, -45.0],
+      "p_max": [0.4, 45.0],
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0],
+      "transform": [
+        {"rotate": [-40]},
+        {"translate": [315, 105]}
+      ]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [-0.4, -45.0],
+      "p_max": [0.4, 45.0],
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0],
+      "transform": [
+        {"rotate": [-20]},
+        {"translate": [365, 105]}
+      ]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [-0.4, -45.0],
+      "p_max": [0.4, 45.0],
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0],
+      "transform": [
+        {"rotate": [10]},
+        {"translate": [415, 105]}
+      ]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [-0.4, -45.0],
+      "p_max": [0.4, 45.0],
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0],
+      "transform": [
+        {"rotate": [30]},
+        {"translate": [465, 105]}
+      ]
+    },
+    {
+      "type": "rectangle",
+      "p_min": [-0.4, -45.0],
+      "p_max": [0.4, 45.0],
+      "fill_rgba": [0.95, 0.95, 0.95, 1.0],
+      "transform": [
+        {"rotate": [60]},
+        {"translate": [515, 105]}
+      ]
+    }
+  ]
+}

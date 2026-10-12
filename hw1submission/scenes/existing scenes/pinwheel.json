@@ -1,0 +1,121 @@
+{
+    "resolution": [600, 500],
+    "duration": 1.0,
+    "background": [0.08, 0.08, 0.12],
+    "objects": [
+        {
+            "type": "rectangle",
+            "fill_rgba": [1.0, 0.2, 0.2, 0.45],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [0]},
+                        {"translate": [300, 250]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [90]},
+                        {"translate": [300, 250]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.2, 1.0, 0.2, 0.45],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [90]},
+                        {"translate": [300, 250]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [180]},
+                        {"translate": [300, 250]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.2, 0.5, 1.0, 0.45],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [180]},
+                        {"translate": [300, 250]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [270]},
+                        {"translate": [300, 250]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [1.0, 0.9, 0.2, 0.45],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [270]},
+                        {"translate": [300, 250]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [36, 130]},
+                        {"translate": [282, 70]},
+                        {"translate": [-300, -250]},
+                        {"rotate": [360]},
+                        {"translate": [300, 250]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [1.0, 1.0, 1.0, 0.75],
+            "stroke_rgba": [0.0, 0.0, 0.0, 1.0],
+            "stroke_width": 0.04,
+            "transform": [
+                {"scale": [70, 70]},
+                {"translate": [300, 250]}
+            ]
+        }
+    ]
+}

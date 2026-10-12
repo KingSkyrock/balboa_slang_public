@@ -1,0 +1,62 @@
+{
+    "resolution": [512, 512],
+    "background": [
+        0.3, 0.3, 0.3
+    ],
+    "objects": [
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 40,
+            "fill_rgba": [1.0, 1.0, 0.2, 0.1]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 60,
+            "fill_rgba": [1.0, 0.2, 0.2, 0.2]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 80,
+            "fill_rgba": [0.2, 0.2, 1.0, 0.3]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 100,
+            "fill_rgba": [0.4, 1.0, 0.2, 0.4]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 120,
+            "fill_rgba": [1.0, 0.2, 0.4, 0.5]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 140,
+            "fill_rgba": [0.4, 0.2, 1.0, 0.6]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 160,
+            "fill_rgba": [0.2, 1.0, 0.4, 0.7]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 180,
+            "fill_rgba": [1.0, 0.4, 0.2, 0.8]
+        },
+        {
+            "type": "circle",
+            "center": [256, 256],
+            "radius": 200,
+            "fill_rgba": [0.2, 0.4, 1.0, 0.9]
+        }
+    ]
+}

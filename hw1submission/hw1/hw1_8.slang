@@ -1,0 +1,188 @@
+import hw1_common;
+
+[shader("compute")]
+[numthreads(8, 8, 1)]
+void compute_main(uint2 tid : SV_DispatchThreadID,
+                  uniform float3 background,
+                  uniform int samples_per_axis,
+                  StructuredBuffer<Shape> shapes,
+                  uniform int num_shapes,
+                  StructuredBuffer<Circle> circles,
+                  StructuredBuffer<Polyline> polylines,
+                  StructuredBuffer<QuadraticBezier> quadratic_beziers,
+                  StructuredBuffer<float2> points,
+                  RWTexture2D<float4> image) {
+    uint width, height;
+    image.GetDimensions(width, height);
+    if (tid.x >= width || tid.y >= height) {
+        return;
+    }
+    float subpixel_division = 1.0 / samples_per_axis;
+    float2 q = float2(float(tid.x) + subpixel_division / 2, 
+                      float(height) - float(tid.y) - 1 + subpixel_division / 2);
+    float3 final_color = float3(0);
+    for (int subpixel_x = 0; subpixel_x < samples_per_axis; subpixel_x++) {
+        for (int subpixel_y = 0; subpixel_y < samples_per_axis; subpixel_y++) {
+            float3 subpixel_color = float3(background); // default is bg color
+            float2 q_sub = float2(q.x + subpixel_division * subpixel_x,
+                           q.y + subpixel_division * subpixel_y);
+            for (int i = num_shapes - 1; i >= 0; i--) {
+                // Transform using world_to_obj
+                float3 q_transform_ = mul(shapes[i].world_to_obj, float3(q_sub, 1));
+                float2 q_obj = float2(q_transform_.x, q_transform_.y);
+
+                // Shape properties
+                ShapeType type = shapes[i].type;
+                int index = shapes[i].index;
+                float stroke_radius = shapes[i].stroke_width / 2;
+                float3 fill_rgb = shapes[i].fill_rgba.rgb;
+                float3 stroke_rgb = shapes[i].stroke_rgba.rgb;
+                float fill_alpha = shapes[i].fill_rgba.a;
+                float stroke_alpha = shapes[i].stroke_rgba.a;
+                bool use_stroke = shapes[i].use_stroke;
+                bool use_fill = shapes[i].use_fill;
+
+                if (type == ShapeType.Polyline) {
+                    Polyline pl = polylines[index];
+                    int lineStart = pl.pts_begin;
+                    int lineEnd = pl.pts_end - 1;
+                    int intersections = 0;
+                    bool stroke_hit = false;
+                    for (int j = lineStart; j < lineEnd + int(pl.closed); j++) {
+                        float2 p0, p1;
+                        if (pl.closed && j == lineEnd) {
+                            p0 = points[j];
+                            p1 = points[lineStart];
+                        } else {
+                            p0 = points[j];
+                            p1 = points[j + 1];
+                        }
+                        // draw strokes
+                        if (use_stroke) {
+                            float d = length(p1-p0);
+                            float l = dot(p1-p0, q_obj-p0) / d;
+                            float2 q_prime = p0 + l * (p1-p0)/ d;
+                            if (l > 0 && l < d && length(q_prime - q_obj) < stroke_radius) {
+                                stroke_hit = true;
+                            }
+                            // draw caps
+                            if (j != lineStart || pl.closed) {
+                                if (length(p0 - q_obj) < stroke_radius) {
+                                    stroke_hit = true;
+                                }
+                            }
+                        }
+                        // fill color
+                        if (pl.closed && use_fill) {
+                            float y_diff = p1.y - p0.y;
+                            float x_diff = p1.x - p0.x;
+                            float t, s;
+                            if (y_diff != 0) {
+                                t = (q_obj.y - p0.y) / y_diff;
+                                s = p0.x + t * x_diff - q_obj.x;
+                                if (s >= 0 && ((p0.y >= q_obj.y) != (p1.y >= q_obj.y))) {
+                                    intersections += p0.y < p1.y ? 1 : -1;
+                                }
+                            }
+                        }
+                    }
+                    // fill first
+                    if (intersections != 0) {
+                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    }
+                    // then stroke on top
+                    if (stroke_hit) {
+                        subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                    }
+                } else if (type == ShapeType.Circle) {
+                    float2 center = circles[index].center;
+                    float radius = circles[index].radius;
+                    float distance = length(q_obj - center);
+                    if (use_fill && distance <= radius) {
+                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    }
+                    if (use_stroke && abs(distance - radius) <= stroke_radius) {
+                        subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                    }
+                } else if (type == ShapeType.QuadraticBezier) {
+                    QuadraticBezier qb = quadratic_beziers[index];
+                    int curveStart = qb.pts_begin;
+                    int curveEnd = qb.pts_end - 2;
+                    int intersections = 0;
+                    bool stroke_hit = false;
+                    for (int j = curveStart; j < curveEnd + int(qb.closed); j += 2) {
+                        float2 p0, p1, p2;
+                        if (qb.closed && j == curveEnd) {
+                            p0 = points[j];
+                            p1 = points[j + 1];
+                            p2 = points[curveStart];
+                        } else {
+                            p0 = points[j];
+                            p1 = points[j + 1];
+                            p2 = points[j + 2];
+                        }
+                        // draw strokes
+                        if (use_stroke) {
+                            float a = 2 * dot(p0 - 2 * p1 + p2, p0 - 2 * p1 + p2);
+                            float b = 3 * dot(p0 - 2 * p1 + p2, 2 * (p1 - p0));
+                            float c = dot(2 * (p1 - p0), 2 * (p1 - p0)) + 2 * dot(p0 - 2 * p1 + p2, p0 - q_obj);
+                            float d = dot(2 * (p1 - p0), p0 - q_obj);
+                            float3 roots;
+                            int cube_roots = solve_cubic(a, b, c, d, roots);
+                            float t;
+                            for (int k = 0; k < cube_roots; k++) {
+                                float t = roots[k];
+                                if (t >= 0 && t <= 1) {
+                                    float2 point_on_curve = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
+                                    if (length(point_on_curve - q_obj) < stroke_radius) {
+                                        stroke_hit = true;
+                                    }
+                                }
+                            }
+                            // draw caps
+                            if (j != curveStart || qb.closed) {
+                                if (length(p0 - q_obj) < stroke_radius) {
+                                    stroke_hit = true;
+                                }
+                            }
+                        }
+                        // fill color
+                        if (qb.closed && use_fill) {
+                            float2 a = p0 - 2 * p1 + p2;
+                            float2 b = 2 * (p1 - p0);
+                            float2 c = p0 - q_obj;
+                            float2 roots;
+                            bool has_roots = solve_quadratic(a.y, b.y, c.y, roots);
+                            float t, dydt;
+                            if (has_roots) {
+                                for (int k = 0; k < 2; k++) {
+                                    t = roots[k];
+                                    if (k == 1 && roots[1] == roots[0]) break; // double roots
+                                    if (t >=0 && t < 1) {
+                                        float2 point_on_curve = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
+                                        if (point_on_curve.x >= q_obj.x) {
+                                            dydt = b.y + 2.0 * a.y * t;
+                                            if (dydt != 0) {
+                                                intersections += dydt > 0 ? 1 : -1;
+                                            }
+                                        }
+                                    }
+                                }    
+                            }
+                        }
+                    }
+                    // fill first
+                    if (intersections != 0) {
+                        subpixel_color = fill_rgb * fill_alpha + subpixel_color * (1 - fill_alpha);
+                    }
+                    // then stroke on top
+                    if (stroke_hit) {
+                        subpixel_color = stroke_rgb * stroke_alpha + subpixel_color * (1 - stroke_alpha);
+                    }
+                }
+            }
+            final_color += subpixel_color;
+        }
+    }
+    image[tid] = float4(final_color * subpixel_division * subpixel_division, 1.0);
+}

@@ -1,0 +1,271 @@
+{
+  "resolution": [640, 360],
+  "background": [0.30, 0.32, 0.36],
+  "duration": 1.0,
+  "samples_per_axis": 4,
+
+  "objects": [
+    {
+      "type": "polyline",
+      "points": [
+        320, 180,
+        420, 120,
+        380, 260,
+        320, 180
+      ],
+      "closed": false,
+      "stroke_rgba": [0.55, 0.57, 0.62, 1.0],
+      "stroke_width": 2.0
+    },
+
+    {
+      "type": "triangle",
+      "p0": [20, 0],
+      "p1": [150, -35],
+      "p2": [150, 35],
+      "fill_rgba": [0.95, 0.35, 0.40, 1.0],
+      "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+      "stroke_width": 2.0,
+
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [0]},
+            {"translate": [320, 180]}
+          ]
+        },
+        {
+          "time": 0.17,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.15, 0.80]},
+            {"shear_x": [0.30]},
+            {"rotate": [35]},
+            {"translate": [420, 120]}
+          ]
+        },
+        {
+          "time": 0.63,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [0.75, 1.25]},
+            {"shear_x": [-0.35]},
+            {"rotate": [210]},
+            {"translate": [380, 260]}
+          ]
+        },
+        {
+          "time": 1.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [360]},
+            {"translate": [320, 180]}
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "triangle",
+      "p0": [20, 0],
+      "p1": [150, -35],
+      "p2": [150, 35],
+      "fill_rgba": [0.35, 0.80, 0.82, 1.0],
+      "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+      "stroke_width": 2.0,
+
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [90]},
+            {"translate": [320, 180]}
+          ]
+        },
+        {
+          "time": 0.17,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.15, 0.80]},
+            {"shear_x": [0.30]},
+            {"rotate": [125]},
+            {"translate": [420, 120]}
+          ]
+        },
+        {
+          "time": 0.63,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [0.75, 1.25]},
+            {"shear_x": [-0.35]},
+            {"rotate": [300]},
+            {"translate": [380, 260]}
+          ]
+        },
+        {
+          "time": 1.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [450]},
+            {"translate": [320, 180]}
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "triangle",
+      "p0": [20, 0],
+      "p1": [150, -35],
+      "p2": [150, 35],
+      "fill_rgba": [0.96, 0.76, 0.30, 1.0],
+      "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+      "stroke_width": 2.0,
+
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [180]},
+            {"translate": [320, 180]}
+          ]
+        },
+        {
+          "time": 0.17,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.15, 0.80]},
+            {"shear_x": [0.30]},
+            {"rotate": [215]},
+            {"translate": [420, 120]}
+          ]
+        },
+        {
+          "time": 0.63,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [0.75, 1.25]},
+            {"shear_x": [-0.35]},
+            {"rotate": [390]},
+            {"translate": [380, 260]}
+          ]
+        },
+        {
+          "time": 1.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [540]},
+            {"translate": [320, 180]}
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "triangle",
+      "p0": [20, 0],
+      "p1": [150, -35],
+      "p2": [150, 35],
+      "fill_rgba": [0.68, 0.46, 0.90, 1.0],
+      "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+      "stroke_width": 2.0,
+
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [270]},
+            {"translate": [320, 180]}
+          ]
+        },
+        {
+          "time": 0.17,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.15, 0.80]},
+            {"shear_x": [0.30]},
+            {"rotate": [305]},
+            {"translate": [420, 120]}
+          ]
+        },
+        {
+          "time": 0.63,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [0.75, 1.25]},
+            {"shear_x": [-0.35]},
+            {"rotate": [480]},
+            {"translate": [380, 260]}
+          ]
+        },
+        {
+          "time": 1.0,
+          "transform": [
+            {"translate": [-20, 0]},
+            {"scale": [1.0, 1.0]},
+            {"shear_x": [0.0]},
+            {"rotate": [630]},
+            {"translate": [320, 180]}
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "circle",
+      "fill_rgba": [0.96, 0.96, 0.96, 1.0],
+      "stroke_rgba": [0.15, 0.15, 0.15, 1.0],
+      "stroke_width": 2.0,
+
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {"scale": [18, 18]},
+            {"translate": [320, 180]}
+          ]
+        },
+        {
+          "time": 0.17,
+          "transform": [
+            {"scale": [18, 18]},
+            {"translate": [420, 120]}
+          ]
+        },
+        {
+          "time": 0.63,
+          "transform": [
+            {"scale": [18, 18]},
+            {"translate": [380, 260]}
+          ]
+        },
+        {
+          "time": 1.0,
+          "transform": [
+            {"scale": [18, 18]},
+            {"translate": [320, 180]}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+    "resolution": [512, 512],
+    "background": [0.4, 0.4, 0.9],
+    "duration": 1.0,
+    "objects": [
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [315]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [675]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [270]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [630]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [225]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [585]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [180]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [540]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [135]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [495]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [90]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [450]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [45]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [405]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.1,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [0]},
+                        {"translate": [256, 256]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [26, 70]},
+                        {"translate": [243, 60]},
+                        {"translate": [-256, -256]},
+                        {"rotate": [360]},
+                        {"translate": [256, 256]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [0.8, 0.8, 0.2, 1.0],
+            "stroke_rgba": [1.0, 1.0, 1.0, 1.0],
+            "stroke_width": 0.05,
+            "transform": [
+                {"scale": [100, 100]},
+                {"translate": [256, 256]}
+            ]
+        }
+    ]
+}

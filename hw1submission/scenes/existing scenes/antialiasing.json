@@ -1,0 +1,60 @@
+{
+    "resolution": [160, 90],
+    "background": [
+        0.3, 0.3, 0.3
+    ],
+    "samples_per_axis": 4,
+    "objects": [
+        {
+            "type": "polyline",
+            "points": [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 2.0, 1.0],
+            "fill_rgba": [0.8, 0.7, 0.8, 1.0],
+            "stroke_rgba": [0.15, 0.1, 0.15, 1.0],
+            "stroke_width": 0.01,
+            "closed": true,
+            "transform": [
+                {"scale": [40, 30]},
+                {"translate": [75, 12.5]}
+            ]
+        },
+        {
+            "type": "polyline",
+            "points": [0.0, 0.0, 1.0, 0.0, 1.0, 2.0],
+            "stroke_rgba": [0.9, 0.9, 0.15, 1.0],
+            "stroke_width": 1,
+            "closed": false,
+            "transform": [
+                {"scale": [15, 15]},
+                {"rotate": [-30]},
+                {"translate": [112.5, 50]}
+            ]
+        },
+        {
+            "type": "triangle",
+            "fill_rgba": [0.1, 0.1, 0.9, 1.0],
+            "transform": [
+                {"scale": [25, 50]},
+                {"shear_y": [1]},
+                {"translate": [87.5, 25]}
+            ]
+        },
+        {
+            "type": "rectangle",
+            "fill_rgba": [0.95, 0.1, 0.9, 1.0],
+            "transform": [
+                {"scale": [50, 50]},
+                {"shear_x": [-1]},
+                {"translate": [25, 12.5]}
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [0.1, 0.3, 0.9, 1.0],
+            "transform": [
+                {"scale": [50, 25]},
+                {"rotate": [45]},
+                {"translate": [60, 45]}
+            ]
+        }
+    ]
+}

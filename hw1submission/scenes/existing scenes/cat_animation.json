@@ -1,0 +1,342 @@
+{
+    "resolution": [800, 450],
+    "duration": 1.0,
+    "background": [0.5, 0.5, 0.5],
+    "objects": [
+        {
+            "type": "polyline",
+            "points": [500, 165, 600, 145],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 5
+        },
+        {
+            "type": "polyline",
+            "points": [500, 205, 600, 235],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 5
+        },
+        {
+            "type": "polyline",
+            "points": [500, 185, 600, 185],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 5
+        },
+        {
+            "type": "polyline",
+            "points": [300, 165, 200, 145],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 5
+        },
+        {
+            "type": "polyline",
+            "points": [300, 205, 200, 235],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 5
+        },
+        {
+            "type": "polyline",
+            "points": [300, 185, 200, 185],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 5
+        },
+
+        {
+            "type": "circle",
+            "center": [400, 150],
+            "radius": 10,
+            "fill_rgba": [0.1, 0.1, 0.1, 1.0]
+        },
+
+        {
+            "type": "circle",
+            "fill_rgba": [0.5, 0.5, 0.0, 1.0],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [485, 275]}
+                    ]
+                },
+                {
+                    "time": 0.25,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [492, 275]}
+                    ]
+                },
+                {
+                    "time": 0.40,
+                    "transform": [
+                        {"scale": [5, 1]},
+                        {"translate": [492, 275]}
+                    ]
+                },
+                {
+                    "time": 0.48,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [492, 275]}
+                    ]
+                },
+                {
+                    "time": 0.72,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [479, 275]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [485, 275]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [0.5, 0.5, 0.0, 1.0],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [315, 275]}
+                    ]
+                },
+                {
+                    "time": 0.25,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [322, 275]}
+                    ]
+                },
+                {
+                    "time": 0.40,
+                    "transform": [
+                        {"scale": [5, 1]},
+                        {"translate": [322, 275]}
+                    ]
+                },
+                {
+                    "time": 0.48,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [322, 275]}
+                    ]
+                },
+                {
+                    "time": 0.72,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [309, 275]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [5, 5]},
+                        {"translate": [315, 275]}
+                    ]
+                }
+            ]
+        },
+
+        {
+            "type": "circle",
+            "fill_rgba": [1.0, 1.0, 1.0, 1.0],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [485, 275]}
+                    ]
+                },
+                {
+                    "time": 0.35,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [485, 275]}
+                    ]
+                },
+                {
+                    "time": 0.40,
+                    "transform": [
+                        {"scale": [40, 5]},
+                        {"translate": [485, 275]}
+                    ]
+                },
+                {
+                    "time": 0.48,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [485, 275]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [485, 275]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "circle",
+            "fill_rgba": [1.0, 1.0, 1.0, 1.0],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [315, 275]}
+                    ]
+                },
+                {
+                    "time": 0.35,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [315, 275]}
+                    ]
+                },
+                {
+                    "time": 0.40,
+                    "transform": [
+                        {"scale": [40, 5]},
+                        {"translate": [315, 275]}
+                    ]
+                },
+                {
+                    "time": 0.48,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [315, 275]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [40, 40]},
+                        {"translate": [315, 275]}
+                    ]
+                }
+            ]
+        },
+
+        {
+            "type": "circle",
+            "center": [400, 225],
+            "radius": 160,
+            "fill_rgba": [0.3, 0.3, 0.3, 1.0],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 2
+        },
+
+        {
+            "type": "triangle",
+            "p0": [610, 420],
+            "p1": [455, 345],
+            "p2": [520, 300],
+            "fill_rgba": [0.4, 0.3, 0.2, 1.0],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 2,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"translate": [-520, -330]},
+                        {"rotate": [0]},
+                        {"translate": [520, 330]}
+                    ]
+                },
+                {
+                    "time": 0.60,
+                    "transform": [
+                        {"translate": [-520, -330]},
+                        {"rotate": [0]},
+                        {"translate": [520, 330]}
+                    ]
+                },
+                {
+                    "time": 0.72,
+                    "transform": [
+                        {"translate": [-520, -330]},
+                        {"rotate": [8]},
+                        {"translate": [520, 330]}
+                    ]
+                },
+                {
+                    "time": 0.84,
+                    "transform": [
+                        {"translate": [-520, -330]},
+                        {"rotate": [0]},
+                        {"translate": [520, 330]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"translate": [-520, -330]},
+                        {"rotate": [0]},
+                        {"translate": [520, 330]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "triangle",
+            "p0": [190, 420],
+            "p1": [355, 345],
+            "p2": [280, 300],
+            "fill_rgba": [0.4, 0.3, 0.2, 1.0],
+            "stroke_rgba": [0.1, 0.1, 0.1, 1.0],
+            "stroke_width": 2,
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"translate": [-280, -330]},
+                        {"rotate": [0]},
+                        {"translate": [280, 330]}
+                    ]
+                },
+                {
+                    "time": 0.60,
+                    "transform": [
+                        {"translate": [-280, -330]},
+                        {"rotate": [0]},
+                        {"translate": [280, 330]}
+                    ]
+                },
+                {
+                    "time": 0.72,
+                    "transform": [
+                        {"translate": [-280, -330]},
+                        {"rotate": [-8]},
+                        {"translate": [280, 330]}
+                    ]
+                },
+                {
+                    "time": 0.84,
+                    "transform": [
+                        {"translate": [-280, -330]},
+                        {"rotate": [0]},
+                        {"translate": [280, 330]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"translate": [-280, -330]},
+                        {"rotate": [0]},
+                        {"translate": [280, 330]}
+                    ]
+                }
+            ]
+        }
+    ]
+}
