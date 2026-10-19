@@ -2,7 +2,7 @@
 UCSD CSE 167 codebase
 https://cseweb.ucsd.edu/~tzli/cse167/
 
-This is a revised version of balboa that builds on [SlangPy](https://github.com/shader-slang/slangpy). Currently only Homework 1 is completed. Future homeworks will be added soon.
+This is a revised version of balboa that builds on [SlangPy](https://github.com/shader-slang/slangpy). Currently only Homework 1 and 2 are completed. Future homeworks will be added soon.
 
 # Setup
 Clone the repository:

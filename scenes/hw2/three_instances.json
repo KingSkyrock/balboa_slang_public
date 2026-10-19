@@ -1,0 +1,48 @@
+{
+    "camera": {
+        "resolution": [800, 500],
+        "transform": [
+            {
+                "lookat": {
+                    "position": [0.0, 0.8, 1.0],
+                    "target": [0.0, 0.0, -5.5],
+                    "up": [0.0, 1.0, 0.0]
+                }
+            }
+        ],
+        "s": 1.25
+    },
+
+    "background": [0.08, 0.09, 0.12],
+
+    "objects": [
+        {
+            "filename": "two_shapes_mesh.json",
+            "transform": [
+                {"scale": [0.45, 0.45, 0.45]},
+                {"rotate_x": [15]},
+                {"rotate_y": [-20]},
+                {"translate": [-1.8, 0.5, 0.6]}
+            ]
+        },
+
+        {
+            "filename": "two_shapes_mesh.json",
+            "transform": [
+                {"scale": [0.60, 0.60, 0.60]},
+                {"rotate_z": [20]},
+                {"rotate_y": [25]}
+            ]
+        },
+
+        {
+            "filename": "two_shapes_mesh.json",
+            "transform": [
+                {"scale": [0.38, 0.38, 0.38]},
+                {"rotate_x": [-25]},
+                {"rotate_y": [40]},
+                {"translate": [1.8, -0.5, -0.8]}
+            ]
+        }
+    ]
+}

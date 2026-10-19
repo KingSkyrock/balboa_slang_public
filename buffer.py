@@ -1,18 +1,30 @@
 import slangpy as spy
 import numpy as np
 
-def create_texture_2d(device, width, height) -> spy.Texture:
+def create_texture_2d(device, width, height, num_channels=4) -> spy.Texture:
     """
-    Create a 2D writable texture with 4 channels (RGBA) and 32 bit floats.
+    Create a 2D writable texture with num_channels channels and 32 bit floats.
+    num_channels can only be 4 or 1
     """
-    return device.create_texture(
-        type = spy.TextureType.texture_2d,
-        format = spy.Format.rgba32_float,
-        width = width,
-        height = height,
-        usage = spy.TextureUsage.shader_resource |
-                spy.TextureUsage.unordered_access,
-    )
+    if num_channels == 4:
+        return device.create_texture(
+            type = spy.TextureType.texture_2d,
+            format = spy.Format.rgba32_float,
+            width = width,
+            height = height,
+            usage = spy.TextureUsage.shader_resource |
+                    spy.TextureUsage.unordered_access,
+        )
+    else:
+        assert(num_channels == 1)
+        return device.create_texture(
+            type = spy.TextureType.texture_2d,
+            format = spy.Format.r32_float,
+            width = width,
+            height = height,
+            usage = spy.TextureUsage.shader_resource |
+                    spy.TextureUsage.unordered_access,
+        )
 
 def structured_buffer_from_numpy(device, arr):
     arr = np.ascontiguousarray(arr)
@@ -20,6 +32,16 @@ def structured_buffer_from_numpy(device, arr):
     if len(arr) == 0:
         arr = np.zeros((1, *arr.shape[1:]), dtype=arr.dtype)
     return spy.Tensor.from_numpy(device, arr).storage
+
+def structured_typed_buffer_from_numpy(device, arr, dtype):
+    arr = np.ascontiguousarray(arr)
+    tensor = spy.Tensor.empty(
+        device,
+        shape=(len(arr),),
+        dtype=dtype
+    )
+    tensor.copy_from_numpy(arr)
+    return tensor.storage
 
 def create_structured_buffer(device, dtype, values):
     tensor = spy.Tensor.empty(

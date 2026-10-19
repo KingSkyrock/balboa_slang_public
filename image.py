@@ -18,6 +18,6 @@ def save_png(path, image):
     alpha = np.clip(image[..., 3:4], 0.0, 1.0)
 
     rgba = np.concatenate([rgb, alpha], axis=-1)
-    rgba8 = np.round(rgba * 255.0).astype(np.uint8)
+    rgba8 = np.round(np.clip(rgba, 0.0, 1.0) * 255.0).astype(np.uint8)
 
     Image.fromarray(rgba8, 'RGBA').save(path)

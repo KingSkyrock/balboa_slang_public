@@ -1,0 +1,55 @@
+{
+    "duration": 6.0,
+
+    "camera": {
+        "resolution": [800, 500],
+        "s": 0.65,
+
+        "transform_keyframes": [
+            {
+                "time": 0.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [-4.0, 1.5, 6.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 3.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [2.0, 2.8, 5.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 6.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [-4.0, 1.5, 6.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    "background": [0.08, 0.09, 0.12],
+
+    "objects": [
+        {
+            "filename": "torus_mobius_centered_mesh.json"
+        }
+    ]
+}
