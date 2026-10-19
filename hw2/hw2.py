@@ -97,10 +97,23 @@ def hw2_2(args):
 
     def to_screen(p):
         # HW2.2: implement this (basically the same as HW2.1)
-        return (0.0, 0.0)
+        s = args.s
+        x = p[0]
+        y = p[1]
+        z = p[2]
+
+        x_camera = -x/z
+        y_camera = -y/z
+
+        x_screen = args.width  * (x_camera + s * a) / (2 * s * a)
+        y_screen = args.height * (y_camera - s) / (2 * -s)
+
+        return (x_screen, y_screen)
 
     # splat the triangles onto the screen
     screen_vertices = [to_screen(mesh.vertices[vid, :]) for vid in range(mesh.vertices.shape[0])]
+
+    z_coords = [mesh.vertices[vid, :][2] for vid in range(mesh.vertices.shape[0])]
 
     def render(command_encoder, vars, img):
         # Clear color buffer
@@ -122,6 +135,28 @@ def hw2_2(args):
             # aabb_min & aabb_max like in 2.1
             # c0, c1, c2 from mesh.vertex_colors
             # use mesh.faces[tri_id] to obtain the vertex indices
+            
+            v_indexes = mesh.faces[tri_id]
+
+            sp0 = screen_vertices[v_indexes[0]]
+            sp1 = screen_vertices[v_indexes[1]]
+            sp2 = screen_vertices[v_indexes[2]]
+
+            inv_depth0 = -1.0 / z_coords[v_indexes[0]]
+            inv_depth1 = -1.0 / z_coords[v_indexes[1]]
+            inv_depth2 = -1.0 / z_coords[v_indexes[2]]
+
+            c0 = mesh.vertex_colors[v_indexes[0]]
+            c1 = mesh.vertex_colors[v_indexes[1]]
+            c2 = mesh.vertex_colors[v_indexes[2]]
+
+            min_x = min(sp0[0], sp1[0], sp2[0])
+            min_y = min(sp0[1], sp1[1], sp2[1])
+            max_x = max(sp0[0], sp1[0], sp2[0])
+            max_y = max(sp0[1], sp1[1], sp2[1])
+        
+            aabb_min = (int(min_x), int(min_y))
+            aabb_max = (int(max_x), int(max_y))
 
             if aabb_min[0] > aabb_max[0] or aabb_min[1] > aabb_max[1]:
                 continue
