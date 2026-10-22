@@ -30,7 +30,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
     float sign12 = sign(dot((p - sp1), n12));
     float sign20 = sign(dot((p - sp2), n20));
 
-    if (sign01 == sign12 && sign12 == sign20) {
+    if ((sign01 >= 0 && sign12 >= 0 && sign20 >= 0) || (sign01 <= 0 && sign12 <= 0 && sign20 <= 0)) {
         image[ipixel] = float4(color, 1.0);
         return;
     }

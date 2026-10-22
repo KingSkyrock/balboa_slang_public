@@ -62,7 +62,7 @@ void compute_main(uint2 tid : SV_DispatchThreadID,
     float sign12 = sign(dot((p_screen - sp1), n12));
     float sign20 = sign(dot((p_screen - sp2), n20));
 
-    if (sign01 == sign12 && sign12 == sign20) {
+    if ((sign01 >= 0 && sign12 >= 0 && sign20 >= 0) || (sign01 <= 0 && sign12 <= 0 && sign20 <= 0)) {
         if (depth < depth_image[ipixel]) {
             depth_image[ipixel] = depth;
             color_image[ipixel] = float4(c, 1.0);
