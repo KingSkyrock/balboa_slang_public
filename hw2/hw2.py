@@ -212,19 +212,31 @@ def hw2_3(args):
 
     # HW 2.3: implement this
     # change np.zeros into the right matrices
-    projection = np.zeros((4, 4), dtype=np.float32)
-    camera_to_screen = np.zeros((4, 4), dtype=np.float32)
+    projection = np.array([
+        [1, 0,  0, 0],
+        [0, 1,  0, 0],
+        [0, 0,  0, 1],
+        [0, 0, -1, 0]
+    ])
+    s = camera.s
+    screen_mapping = np.array([
+        [width / (2 * s * a),                 0, 0, width  / 2],
+        [                  0, -height / (2 * s), 0, height / 2],
+        [                  0,                 0, 1,          0],
+        [                  0,                 0, 0,          1]
+    ])
+    camera_to_screen = screen_mapping @ projection
     # use camera.cam_to_world
-    view_matrix = np.zeros((4, 4), dtype=np.float32)
-    world_to_screen = np.zeros((4, 4), dtype=np.float32)
-    
+    view_matrix = np.linalg.inv(camera.cam_to_world)
+    world_to_screen = camera_to_screen @ view_matrix
+
     screen_vertices_list = []
     inv_depth_list = []
     for mesh in scene.meshes:
         # HW 2.3: implement this
         # change np.zeros into the right matrix
         # use mesh.model_matrix
-        MVP = np.zeros((4, 4), dtype=np.float32)
+        MVP = world_to_screen @ mesh.model_matrix
         ones = np.ones((mesh.vertices.shape[0], 1), dtype=mesh.vertices.dtype)
         vertices = np.concatenate(
             [mesh.vertices, ones],
@@ -237,6 +249,10 @@ def hw2_3(args):
         # ---
         # HW 2.3: your code here
         # ---
+
+        vertices = vertices @ MVP.T
+        vertices = (vertices / vertices[:, 3:4]).astype(np.float32)
+
         inv_depth_list.append(np.ascontiguousarray(vertices[:, 2]))
         screen_vertices_list.append(np.ascontiguousarray(vertices[:, :2]))
 
@@ -261,6 +277,28 @@ def hw2_3(args):
             for tri_id in range(mesh.faces.shape[0]):
                 # HW 2.3: implement this
                 # (basically the same as HW 2.2)
+                
+                v_indexes = mesh.faces[tri_id]
+                
+                sp0 = screen_vertices[v_indexes[0]]
+                sp1 = screen_vertices[v_indexes[1]]
+                sp2 = screen_vertices[v_indexes[2]]
+    
+                inv_depth0 = inv_depth[v_indexes[0]]
+                inv_depth1 = inv_depth[v_indexes[1]]
+                inv_depth2 = inv_depth[v_indexes[2]]
+
+                c0 = mesh.vertex_colors[v_indexes[0]]
+                c1 = mesh.vertex_colors[v_indexes[1]]
+                c2 = mesh.vertex_colors[v_indexes[2]]
+    
+                min_x = min(sp0[0], sp1[0], sp2[0])
+                min_y = min(sp0[1], sp1[1], sp2[1])
+                max_x = max(sp0[0], sp1[0], sp2[0])
+                max_y = max(sp0[1], sp1[1], sp2[1])
+            
+                aabb_min = (int(min_x), int(min_y))
+                aabb_max = (int(max_x), int(max_y))
 
                 if aabb_min[0] > aabb_max[0] or aabb_min[1] > aabb_max[1]:
                     continue

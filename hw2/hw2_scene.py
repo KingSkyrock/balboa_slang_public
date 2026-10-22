@@ -185,11 +185,77 @@ def compose_transformations(transformations):
         Given a list of transformations, compose them into a matrix.
     """
     F = np.eye(4, dtype=np.float32)
-
     for transform in transformations:
-        pass
-        # HW 2.3 TODO: your code here
+        if "lookat" in transform:
+            p = np.array(transform["lookat"]["position"])
+            t = np.array(transform["lookat"]["target"])
+            u = np.array(transform["lookat"]["up"])
 
+            d = t - p
+            r = np.cross(d, u)
+
+            d = d / np.linalg.norm(d)
+            r = r / np.linalg.norm(r)
+
+            U = np.cross(r, d)
+
+            F = np.array([
+                [r[0], U[0], -d[0], p[0]], 
+                [r[1], U[1], -d[1], p[1]], 
+                [r[2], U[2], -d[2], p[2]],
+                [   0,    0,     0,    1] 
+            ]) @ F # i think this multiplication isn't necessary
+
+        elif "translate" in transform:
+            x = transform["translate"][0]
+            y = transform["translate"][1]
+            z = transform["translate"][2]
+            F = np.array([
+                [1, 0, 0, x], 
+                [0, 1, 0, y], 
+                [0, 0, 1, z],
+                [0, 0, 0, 1] 
+            ]) @ F
+        elif "scale" in transform:
+            x = transform["scale"][0]
+            y = transform["scale"][1]
+            z = transform["scale"][2]
+            F = np.array([
+                [x, 0, 0, 0], 
+                [0, y, 0, 0], 
+                [0, 0, z, 0],
+                [0, 0, 0, 1] 
+            ]) @ F
+        elif "rotate_x" in transform:
+            theta = np.radians(transform["rotate_x"][0])
+            st = np.sin(theta)
+            ct = np.cos(theta)
+            F = np.array([
+                [1,  0,   0, 0], 
+                [0, ct, -st, 0], 
+                [0, st,  ct, 0],
+                [0,  0,   0, 1] 
+            ]) @ F
+        elif "rotate_y" in transform:
+            theta = np.radians(transform["rotate_y"][0])
+            st = np.sin(theta)
+            ct = np.cos(theta)
+            F = np.array([
+                [ ct,  0,  st, 0], 
+                [  0,  1,   0, 0], 
+                [-st,  0,  ct, 0],
+                [  0,  0,   0, 1]
+            ]) @ F
+        elif "rotate_z" in transform:
+            theta = np.radians(transform["rotate_z"][0])
+            st = np.sin(theta)
+            ct = np.cos(theta)
+            F = np.array([
+                [ct, -st, 0, 0], 
+                [st,  ct, 0, 0], 
+                [ 0,   0, 1, 0],
+                [ 0,   0, 0, 1]
+            ]) @ F
     return F
 
 def parse_scene(filename : str) -> Scene:
