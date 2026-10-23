@@ -593,13 +593,32 @@ def hw2_5(args):
 
     # HW 2.5 TODO: implement this (basically the same as 2.3 and 2.4)
     # change np.zeros into the right matrices
-    projection = np.zeros((4, 4), dtype=np.float32)
-    camera_to_screen = np.zeros((4, 4), dtype=np.float32)
+    projection = np.array([
+        [1, 0,  0, 0],
+        [0, 1,  0, 0],
+        [0, 0,  0, 1],
+        [0, 0, -1, 0]
+    ])
+    s = camera.s
+    screen_mapping = np.array([
+        [width / (2 * s * a),                 0, 0, width  / 2],
+        [                  0, -height / (2 * s), 0, height / 2],
+        [                  0,                 0, 1,          0],
+        [                  0,                 0, 0,          1]
+    ])
+    camera_to_screen = screen_mapping @ projection      
 
     def render_frame(command_encoder, t):
         t = t % scene.duration
         # HW 2.5 TODO: implement this (basically the same as 2.4)
-        world_to_screen = np.zeros((4, 4), dtype=np.float32)
+        if camera.transform_keyframes:
+            cam_transforms = interpolate_transformation(camera.transform_keyframes, t)
+            cam_to_world = hw2_scene.compose_transformations(cam_transforms)
+        else:
+            cam_to_world = camera.cam_to_world
+        view_matrix = np.linalg.inv(cam_to_world)
+
+        world_to_screen = camera_to_screen @ view_matrix
 
         command_encoder.clear_texture_float(
             color_image,
@@ -613,7 +632,13 @@ def hw2_5(args):
         # has a different model matrix
         for mesh, offset in zip(scene.meshes, vertex_offsets):
             # HW 2.5 TODO: implement this (basically the same as 2.4)
-            MVP = np.zeros((4, 4), dtype=np.float32)
+            if mesh.transform_keyframes:
+                model_transforms = interpolate_transformation(mesh.transform_keyframes, t)
+                model_matrix = hw2_scene.compose_transformations(model_transforms)
+            else:
+                model_matrix = mesh.model_matrix
+
+            MVP = world_to_screen @ model_matrix
             transform_vertices_shader.kernel.dispatch(\
                 thread_count=[mesh.vertices.shape[0], 1, 1],
                 command_encoder=command_encoder,
