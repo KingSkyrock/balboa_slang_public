@@ -45,8 +45,8 @@ def hw2_1(args):
     max_x = max(sp0[0], sp1[0], sp2[0])
     max_y = max(sp0[1], sp1[1], sp2[1])
 
-    aabb_min = (int(min_x), int(min_y))
-    aabb_max = (int(max_x), int(max_y))
+    aabb_min = (max(int(min_x), 0), max(int(min_y), 0))
+    aabb_max = (min(int(max_x), img.width - 1), min(int(max_y), img.height - 1))
 
     vars = {'sp0': sp0,
             'sp1': sp1,
@@ -155,8 +155,8 @@ def hw2_2(args):
             max_x = max(sp0[0], sp1[0], sp2[0])
             max_y = max(sp0[1], sp1[1], sp2[1])
         
-            aabb_min = (int(min_x), int(min_y))
-            aabb_max = (int(max_x), int(max_y))
+            aabb_min = (max(int(min_x), 0), max(int(min_y), 0))
+            aabb_max = (min(int(max_x), args.width - 1), min(int(max_y), args.height - 1))
 
             if aabb_min[0] > aabb_max[0] or aabb_min[1] > aabb_max[1]:
                 continue
@@ -297,8 +297,8 @@ def hw2_3(args):
                 max_x = max(sp0[0], sp1[0], sp2[0])
                 max_y = max(sp0[1], sp1[1], sp2[1])
             
-                aabb_min = (int(min_x), int(min_y))
-                aabb_max = (int(max_x), int(max_y))
+                aabb_min = (max(int(min_x), 0), max(int(min_y), 0))
+                aabb_max = (min(int(max_x), width - 1), min(int(max_y), height - 1))
 
                 if aabb_min[0] > aabb_max[0] or aabb_min[1] > aabb_max[1]:
                     continue
@@ -347,7 +347,28 @@ def interpolate_transformation(transform_keyframes, t):
     # Return a list of transformations in the same format
     # as the "transform" field in the scene JSON.
     interp_transforms = []
-
+    for i, frame1 in enumerate(transform_keyframes):
+        if i == 0:
+            continue
+        frame0 = transform_keyframes[i - 1]
+        t0 = frame0["time"] 
+        t1 = frame1["time"]
+        if t <= t1 and t >= t0:
+            w = (t - t0) / (t1 - t0)
+            for j, operation in enumerate(frame1["transform"]):
+                name = list(operation)[0]
+                if name == "lookat":
+                    new_vals = {}
+                    for key in operation[name]:
+                        vals = np.array(operation[name][key])
+                        vals0 = np.array(frame0["transform"][j][name][key])
+                        new_vals[key] = (1-w) * vals0 + w * vals
+                else:
+                    vals = np.array(operation[name])
+                    vals0 = np.array(frame0["transform"][j][name])
+                    new_vals = (1-w) * vals0 + w * vals
+                interp_transforms.append({f"{name}": new_vals});
+            return interp_transforms
     return interp_transforms
     
 def hw2_4(args):
@@ -364,27 +385,56 @@ def hw2_4(args):
 
     # HW 2.4 TODO: implement this (basically the same as 2.3)
     # change np.zeros into the right matrices
-    projection = np.zeros((4, 4), dtype=np.float32)
-    camera_to_screen = np.zeros((4, 4), dtype=np.float32)
+    projection = np.array([
+        [1, 0,  0, 0],
+        [0, 1,  0, 0],
+        [0, 0,  0, 1],
+        [0, 0, -1, 0]
+    ])
+    s = camera.s
+    screen_mapping = np.array([
+        [width / (2 * s * a),                 0, 0, width  / 2],
+        [                  0, -height / (2 * s), 0, height / 2],
+        [                  0,                 0, 1,          0],
+        [                  0,                 0, 0,          1]
+    ])
+    camera_to_screen = screen_mapping @ projection        
 
     def render_frame(command_encoder, t):
         t = t % scene.duration
         # HW 2.4 TODO: insert your code here and fill in world_to_screen
         # by using interpolate_transformation to compute the view matrix at time t
-        world_to_screen = np.zeros((4, 4), dtype=np.float32)
+        if camera.transform_keyframes:
+            cam_transforms = interpolate_transformation(camera.transform_keyframes, t)
+            cam_to_world = hw2_scene.compose_transformations(cam_transforms)
+        else:
+            cam_to_world = camera.cam_to_world
+        view_matrix = np.linalg.inv(cam_to_world)
+
+        world_to_screen = camera_to_screen @ view_matrix
         
         screen_vertices_list = []
         inv_depth_list = []
         for mesh in scene.meshes:
             # HW 2.4 TODO: insert your code here and fill in the MVP matrix
             # by using interpolate_transformation to compute the model matrix at time t
-            MVP = np.zeros((4, 4), dtype=np.float32)
+            if mesh.transform_keyframes:
+                model_transforms = interpolate_transformation(mesh.transform_keyframes, t)
+                model_matrix = hw2_scene.compose_transformations(model_transforms)
+            else:
+                model_matrix = mesh.model_matrix
+
+            MVP = world_to_screen @ model_matrix
             ones = np.ones((mesh.vertices.shape[0], 1), dtype=mesh.vertices.dtype)
             vertices = np.concatenate(
                 [mesh.vertices, ones],
                 axis=1
             )
             # HW 2.4 TODO: insert your code here (basically the same as 2.3)
+
+            vertices = vertices @ MVP.T
+            vertices = (vertices / vertices[:, 3:4]).astype(np.float32)
+    
             inv_depth_list.append(np.ascontiguousarray(vertices[:, 2]))
             screen_vertices_list.append(np.ascontiguousarray(vertices[:, :2]))
 
@@ -409,6 +459,28 @@ def hw2_4(args):
             for tri_id in range(mesh.faces.shape[0]):
                 # HW 2.4 TODO: implement this
                 # (basically the same as HW 2.2 & 2.3)
+
+                v_indexes = mesh.faces[tri_id]
+                
+                sp0 = screen_vertices[v_indexes[0]]
+                sp1 = screen_vertices[v_indexes[1]]
+                sp2 = screen_vertices[v_indexes[2]]
+    
+                inv_depth0 = inv_depth[v_indexes[0]]
+                inv_depth1 = inv_depth[v_indexes[1]]
+                inv_depth2 = inv_depth[v_indexes[2]]
+
+                c0 = mesh.vertex_colors[v_indexes[0]]
+                c1 = mesh.vertex_colors[v_indexes[1]]
+                c2 = mesh.vertex_colors[v_indexes[2]]
+    
+                min_x = min(sp0[0], sp1[0], sp2[0])
+                min_y = min(sp0[1], sp1[1], sp2[1])
+                max_x = max(sp0[0], sp1[0], sp2[0])
+                max_y = max(sp0[1], sp1[1], sp2[1])
+            
+                aabb_min = (max(int(min_x), 0), max(int(min_y), 0))
+                aabb_max = (min(int(max_x), width - 1), min(int(max_y), height - 1))
 
                 if aabb_min[0] > aabb_max[0] or aabb_min[1] > aabb_max[1]:
                     continue
