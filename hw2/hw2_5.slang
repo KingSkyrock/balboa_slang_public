@@ -45,6 +45,11 @@ bool pixelHitsFace(float2 p, float2 sp0, float2 sp1, float2 sp2) {
     return (sign01 >= 0 && sign12 >= 0 && sign20 >= 0) || (sign01 <= 0 && sign12 <= 0 && sign20 <= 0);
 }
 
+bool isDegenerate(float2 sp0, float2 sp1, float2 sp2) {
+    float two_area = cross(float3(sp1 - sp0, 0), float3(sp2 - sp0, 0)).z;
+    return isnan(two_area) || two_area == 0;
+}
+
 float3 interpolate_barycentric(float2 p, float3 sp0, float3 sp1, float3 sp2, float s, float a, uint width, uint height) {
     float3 p_prime = float3(to_camera(p, s, a, width, height), 0);
 
@@ -117,14 +122,17 @@ void rasterize_depth(
     float3 sp1 = projected_vertices[face.y];
     float3 sp2 = projected_vertices[face.z];
 
-    float min_x = fmin3(sp0.x, sp1.x, sp2.x);
-    float min_y = fmin3(sp0.y, sp1.y, sp2.y);
-    float max_x = fmax3(sp0.x, sp1.x, sp2.x);
-    float max_y = fmax3(sp0.y, sp1.y, sp2.y);
+    if (isDegenerate(sp0.xy, sp1.xy, sp2.xy)) 
+        return;
 
-    // guard against negative with max. unecessary tho. might remove later
-    uint2 aabb_min = uint2(max(uint(min_x), 0), max(uint(min_y), 0));
-    uint2 aabb_max = uint2(min(uint(max_x), width - 1), min(uint(max_y), height - 1));
+    float min_x = max(fmin3(sp0.x, sp1.x, sp2.x), 0.0);
+    float min_y = max(fmin3(sp0.y, sp1.y, sp2.y), 0.0);
+    float max_x = min(fmax3(sp0.x, sp1.x, sp2.x), float(width - 1));
+    float max_y = min(fmax3(sp0.y, sp1.y, sp2.y), float(height - 1));
+    if (min_x > max_x || min_y > max_y) 
+        return;
+    uint2 aabb_min = uint2(uint(min_x), uint(min_y));
+    uint2 aabb_max = uint2(uint(max_x), uint(max_y));
 
     for (uint x = aabb_min.x; x <= aabb_max.x; x++) {
         for (uint y = aabb_min.y; y <= aabb_max.y; y++) {
@@ -169,14 +177,19 @@ void rasterize_id(
     float3 sp0 = projected_vertices[face.x];
     float3 sp1 = projected_vertices[face.y];
     float3 sp2 = projected_vertices[face.z];
-    
-    float min_x = fmin3(sp0.x, sp1.x, sp2.x);
-    float min_y = fmin3(sp0.y, sp1.y, sp2.y);
-    float max_x = fmax3(sp0.x, sp1.x, sp2.x);
-    float max_y = fmax3(sp0.y, sp1.y, sp2.y);
 
-    uint2 aabb_min = uint2(max(uint(min_x), 0), max(uint(min_y), 0));
-    uint2 aabb_max = uint2(min(uint(max_x), width - 1), min(uint(max_y), height - 1));
+    // degenerate triangles
+    if (isDegenerate(sp0.xy, sp1.xy, sp2.xy)) 
+        return;
+    
+    float min_x = max(fmin3(sp0.x, sp1.x, sp2.x), 0.0);
+    float min_y = max(fmin3(sp0.y, sp1.y, sp2.y), 0.0);
+    float max_x = min(fmax3(sp0.x, sp1.x, sp2.x), float(width - 1));
+    float max_y = min(fmax3(sp0.y, sp1.y, sp2.y), float(height - 1));
+    if (min_x > max_x || min_y > max_y)
+        return;
+    uint2 aabb_min = uint2(uint(min_x), uint(min_y));
+    uint2 aabb_max = uint2(uint(max_x), uint(max_y));
 
     for (uint x = aabb_min.x; x <= aabb_max.x; x++) {
         for (uint y = aabb_min.y; y <= aabb_max.y; y++) {
@@ -216,22 +229,21 @@ void shade(
         return;
     }
 
-    uint3 face = faces[tid.x + tid.y * width];
-
-    float3 sp0 = projected_vertices[face.x];
-    float3 sp1 = projected_vertices[face.y];
-    float3 sp2 = projected_vertices[face.z];
-
-    float3 c0 = vertex_colors[face.x];
-    float3 c1 = vertex_colors[face.y];
-    float3 c2 = vertex_colors[face.z];
-
     float x = float(tid.x) + 0.5;
     float y = float(tid.y) + 0.5;
     float2 p_screen = float2(x, y);
 
     uint face_id = triangle_id_buffer[tid.x + tid.y * width];
     if (face_id != 0xffffffff) {
+        uint3 face = faces[face_id];
+
+        float3 sp0 = projected_vertices[face.x];
+        float3 sp1 = projected_vertices[face.y];
+        float3 sp2 = projected_vertices[face.z];
+
+        float3 c0 = vertex_colors[face.x];
+        float3 c1 = vertex_colors[face.y];
+        float3 c2 = vertex_colors[face.z];
         image[tid] = float4(interpolate_barycentric_color(p_screen, sp0, sp1, sp2, s, a, width, height, c0, c1, c2), 1);
     }
 
