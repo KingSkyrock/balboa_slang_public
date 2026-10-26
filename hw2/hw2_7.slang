@@ -23,11 +23,42 @@ struct VertexOutput {
 VertexOutput vertex_main(uint vid : SV_VertexID) {
     VertexOutput output;
     // HW 2.7 TODO: implement
+    
+    //get vertex position + normal + uv
+    float3 position = vertices[vid];
+    float3 normal = vertex_normals[vid];
+    float2 uv = vertex_uvs[vid];
+
+    //calculate positions after transform
+    output.position = mul(MVP, float4(position, 1.0)); //use 1.0 at the end so we can do transform
+    output.world_position = mul(model_matrix, float4(position, 1.0)).xyz;
+    output.world_normal = mul(normal_matrix, normal);
+    output.uv = uv;
+
     return output;
 }
 
 [shader("fragment")]
 float4 fragment_main(VertexOutput input) : SV_Target {
     // HW 2.7 TODO: implement
-    return float4(1.0);
+    // access texture
+    float3 Kd = Kd_texture.Sample(Kd_sampler, input.uv).rgb;
+
+    float3 surface_normal = normalize(input.world_normal);
+    float3 light_direction = normalize(light_dir);
+    float3 view_direction = normalize(camera_position - input.world_position); //direction from surface to camera
+
+    float3 diffuse = Kd * light_color * max(dot(surface_normal, light_direction), 0.0);
+    
+    //get specular
+    float3 r = reflect(-light_direction, surface_normal);
+    float3 specular = float3(0.0, 0.0, 0.0);
+    if (dot(surface_normal, light_direction) > 0.0) {
+        specular = Ks * light_color * pow(max(0.0, dot(r, view_direction)), exponent);
+    }
+    
+    float3 ambient = 0.2 * Kd;
+
+    float3 color = ambient + diffuse + specular;
+    return float4(color, 1.0);
 }
