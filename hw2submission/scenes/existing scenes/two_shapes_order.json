@@ -1,0 +1,85 @@
+{
+  "camera": {
+    "resolution": [
+      640,
+      480
+    ],
+    "transform": [
+      {
+        "lookat": {
+          "position": [
+            0.0,
+            1.0,
+            1.5
+          ],
+          "target": [
+            0.0,
+            0.0,
+            -5.5
+          ],
+          "up": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "s": 0.85
+  },
+  "background": [
+    0.1,
+    0.1,
+    0.13
+  ],
+  "objects": [
+    {
+      "filename": "two_shapes_mesh.json",
+      "transform": [
+        {
+          "scale": [
+            0.35,
+            0.65,
+            0.55
+          ]
+        },
+        {
+          "rotate_y": [
+            -35
+          ]
+        },
+        {
+          "translate": [
+            -1.5,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "two_shapes_mesh.json",
+      "transform": [
+        {
+          "rotate_y": [
+            35
+          ]
+        },
+        {
+          "scale": [
+            0.35,
+            0.65,
+            0.55
+          ]
+        },
+        {
+          "translate": [
+            1.5,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ]
+}

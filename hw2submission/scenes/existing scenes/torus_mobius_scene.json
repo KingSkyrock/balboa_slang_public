@@ -1,0 +1,30 @@
+{
+    "camera": {
+        "resolution": [800, 500],
+        "transform": [
+            {
+                "lookat": {
+                    "position": [0.5, 4.5, -1.0],
+                    "target": [0.0, 0.0, -5.5],
+                    "up": [0.0, 1.0, 0.0]
+                }
+            }
+        ],
+        "s": 0.45
+    },
+
+    "background": [0.10, 0.11, 0.14],
+
+    "objects": [
+        {
+            "filename": "torus_mobius_mesh.json",
+            "transform": [
+                {"rotate_x": [-8]},
+                {"rotate_y": [18]},
+                {"rotate_z": [-6]},
+                {"scale": [1.15, 1.15, 1.15]},
+                {"translate": [0.1, -0.1, 0.0]}
+            ]
+        }
+    ]
+}

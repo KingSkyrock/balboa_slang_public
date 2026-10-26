@@ -1,0 +1,29 @@
+{
+  "camera": {
+    "resolution": [
+      512,
+      512
+    ],
+    "s": 0.32,
+    "z_near": 0.1
+  },
+  "background": [
+    0.08,
+    0.1,
+    0.14
+  ],
+  "objects": [
+    {
+      "filename": "crossing_sheets.ply",
+      "transform": [
+        {
+          "translate": [
+            0,
+            0,
+            -4
+          ]
+        }
+      ]
+    }
+  ]
+}

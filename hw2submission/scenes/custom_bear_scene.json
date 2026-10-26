@@ -1,0 +1,55 @@
+{
+  "duration": 16.0,
+  "camera": {
+    "resolution": [960, 540],
+    "s": 0.5,
+    "z_near": 0.01,
+    "transform_keyframes": [
+      {
+        "time": 0.0,
+        "transform": [
+          {"lookat": {"position": [1.0, 1.9, 2.0], "target": [0, 0.9, 0], "up": [0, 1, 0]}},
+          {"rotate_y": [0.0]}
+        ]
+      },
+      {
+        "time": 16.0,
+        "transform": [
+          {"lookat": {"position": [1.0, 1.9, 2.0], "target": [0, 0.9, 0], "up": [0, 1, 0]}},
+          {"rotate_y": [360.0]}
+        ]
+      }
+    ]
+  },
+  "background": [0.33, 0.55, 0.85],
+  "light": {
+    "light_dir": [-2.0, 1.2, 1.0],
+    "light_color": [1.0, 0.85, 0.6]
+  },
+  "objects": [
+    {
+      "filename": "custom_assets/bear-sp22.ply",
+      "transform": [
+        {"scale": [0.1, 0.1, 0.1]},
+        {"translate": [0.126, 0.025, -0.166]}
+      ],
+      "material": {
+        "texture": "custom_assets/TCom_Rock_CliffGranite4_header.jpg",
+        "Ks": [0.1, 0.1, 0.1],
+        "exponent": 20.0
+      }
+    },
+    {
+      "filename": "custom_assets/terrain.ply",
+      "transform": [
+        {"rotate_x": [-90.0]},
+        {"translate": [0.0, 3.57, 0.0]}
+      ],
+      "material": {
+        "texture": "custom_assets/aerial_grass_rock_diff_2k.jpg",
+        "Ks": [0.0, 0.0, 0.0],
+        "exponent": 1.0
+      }
+    }
+  ]
+}

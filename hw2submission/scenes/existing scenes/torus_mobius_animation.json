@@ -1,0 +1,203 @@
+{
+    "duration": 9.0,
+
+    "camera": {
+        "resolution": [800, 500],
+        "s": 0.45,
+        "transform_keyframes": [
+            {
+                "time": 0.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [0.0, 2.2, 7.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 1.5,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [6.0, 2.0, 3.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 3.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [6.5, 2.4, -3.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 4.5,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [0.0, 2.8, -7.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 6.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [-6.5, 2.4, -3.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 7.5,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [-6.0, 2.0, 3.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 9.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [0.0, 2.2, 7.0],
+                            "target": [0.0, 0.0, 0.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    "background": [0.10, 0.11, 0.14],
+
+    "objects": [
+        {
+            "filename": "torus_mobius_centered_mesh.json",
+
+            "transform_keyframes": [
+            {
+              "time": 0.0,
+              "transform": [
+                {
+                  "rotate_x": [
+                    0.0
+                  ]
+                },
+                {
+                  "rotate_y": [
+                    0.0
+                  ]
+                },
+                {
+                  "rotate_z": [
+                    -8.0
+                  ]
+                }
+              ]
+            },
+            {
+              "time": 2.25,
+              "transform": [
+                {
+                  "rotate_x": [
+                    15.0
+                  ]
+                },
+                {
+                  "rotate_y": [
+                    90.0
+                  ]
+                },
+                {
+                  "rotate_z": [
+                    8.0
+                  ]
+                }
+              ]
+            },
+            {
+              "time": 4.5,
+              "transform": [
+                {
+                  "rotate_x": [
+                    0.0
+                  ]
+                },
+                {
+                  "rotate_y": [
+                    180.0
+                  ]
+                },
+                {
+                  "rotate_z": [
+                    -8.0
+                  ]
+                }
+              ]
+            },
+            {
+              "time": 6.75,
+              "transform": [
+                {
+                  "rotate_x": [
+                    -15.0
+                  ]
+                },
+                {
+                  "rotate_y": [
+                    270.0
+                  ]
+                },
+                {
+                  "rotate_z": [
+                    8.0
+                  ]
+                }
+              ]
+            },
+            {
+              "time": 9.0,
+              "transform": [
+                {
+                  "rotate_x": [
+                    0.0
+                  ]
+                },
+                {
+                  "rotate_y": [
+                    360.0
+                  ]
+                },
+                {
+                  "rotate_z": [
+                    -8.0
+                  ]
+                }
+              ]
+            }]
+    }]
+}

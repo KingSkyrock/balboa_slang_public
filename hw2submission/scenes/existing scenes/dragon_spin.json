@@ -1,0 +1,116 @@
+{
+  "duration": 10.0,
+  "camera": {
+    "resolution": [
+      1024,
+      768
+    ],
+    "s": 0.38,
+    "z_near": 0.001,
+    "transform": [
+      {
+        "lookat": {
+          "position": [0, 2.0, 4.0],
+          "target": [0, 0, 0],
+          "up": [0, 1, 0]
+        }
+      }
+    ]
+  },
+  "light": {
+    "light_dir": [1.0, 1.0, 1.0],
+    "light_color": [1.0, 1.0, 1.0]
+  },
+  "background": [
+    0.035,
+    0.048,
+    0.075
+  ],
+  "objects": [
+    {
+      "filename": "dragon_colored.ply",
+      "material": {
+        "Kd": [0.8, 0.4, 0.25],
+        "Ks": [0.4, 0.4, 0.4],
+        "exponent": 64.0
+      },
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "rotate_y": [
+                -30.0
+              ]
+            },
+            {
+              "rotate_x": [
+                -10.0
+              ]
+            }
+          ]
+        },
+        {
+          "time": 2.5,
+          "transform": [
+            {
+              "rotate_y": [
+                60.0
+              ]
+            },
+            {
+              "rotate_x": [
+                -10.0
+              ]
+            }
+          ]
+        },
+        {
+          "time": 5.0,
+          "transform": [
+            {
+              "rotate_y": [
+                150.0
+              ]
+            },
+            {
+              "rotate_x": [
+                -10.0
+              ]
+            }
+          ]
+        },
+        {
+          "time": 7.5,
+          "transform": [
+            {
+              "rotate_y": [
+                240.0
+              ]
+            },
+            {
+              "rotate_x": [
+                -10.0
+              ]
+            }
+          ]
+        },
+        {
+          "time": 10.0,
+          "transform": [
+            {
+              "rotate_y": [
+                330.0
+              ]
+            },
+            {
+              "rotate_x": [
+                -10.0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

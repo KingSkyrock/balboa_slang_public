@@ -1,0 +1,64 @@
+{
+  "duration": 8.0,
+  "camera": {
+    "resolution": [640, 640],
+    "s": 0.5,
+    "z_near": 0.001,
+    "transform": [
+      {
+        "lookat": {
+          "position": [1.5, 1.5, 1.5],
+          "target": [0, 0, 0],
+          "up": [0, 1, 0]
+        }
+      }
+    ]
+  },
+  "background": [0.08, 0.1, 0.14],
+  "light": {
+    "light_dir": [0.45, 0.65, 0.62],
+    "light_color": [1, 1, 1]
+  },
+  "objects": [
+    {
+      "filename": "avocado.json",
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "rotate_y": [
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "time": 4.0,
+          "transform": [
+            {
+              "rotate_y": [
+                180.0
+              ]
+            }
+          ]
+        },
+        {
+          "time": 8.0,
+          "transform": [
+            {
+              "rotate_y": [
+                360.0
+              ]
+            }
+          ]
+        }
+      ],
+      "material": {
+        "texture": "avocado_Kd.png",
+        "Ks": [0.11, 0.11, 0.11],
+        "exponent": 30.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "camera": {
+        "resolution": [640, 480],
+        "transform": [
+            {
+                "lookat": {
+                    "position": [3.0, 1.8, 1.0],
+                    "target": [0.0, 0.0, -5.5],
+                    "up": [0.0, 1.0, 0.0]
+                }
+            }
+        ],
+        "s": 0.4
+    },
+
+    "background": [0.12, 0.13, 0.17],
+
+    "objects": [
+        {
+            "filename": "two_shapes_mesh.json",
+            "transform": []
+        }
+    ]
+}

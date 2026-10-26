@@ -1,0 +1,65 @@
+{
+  "duration": 8.0,
+  "camera": {
+    "resolution": [640, 640],
+    "s": 0.6,
+    "z_near": 0.001
+  },
+  "background": [0.08, 0.1, 0.14],
+  "light": {
+    "light_dir": [0.45, 0.65, 0.62],
+    "light_color": [1, 1, 1]
+  },
+  "objects": [
+    {
+      "filename": "uv_sphere.json",
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            { "scale": [1.0, 1.0, 1.0] },
+            { "rotate_y": [0] },
+            { "translate": [0, 0, -3.5] }
+          ]
+        },
+        {
+          "time": 2.0,
+          "transform": [
+            { "scale": [1.0, 1.0, 1.0] },
+            { "rotate_y": [90] },
+            { "translate": [0, 0, -3.5] }
+          ]
+        },
+        {
+          "time": 4.0,
+          "transform": [
+            { "scale": [1.0, 1.0, 1.0] },
+            { "rotate_y": [180] },
+            { "translate": [0, 0, -3.5] }
+          ]
+        },
+        {
+          "time": 6.0,
+          "transform": [
+            { "scale": [1.0, 1.0, 1.0] },
+            { "rotate_y": [270] },
+            { "translate": [0, 0, -3.5] }
+          ]
+        },
+        {
+          "time": 8.0,
+          "transform": [
+            { "scale": [1.0, 1.0, 1.0] },
+            { "rotate_y": [360] },
+            { "translate": [0, 0, -3.5] }
+          ]
+        }
+      ],
+      "material": {
+        "texture": "uv_texture.png",
+        "Ks": [0.13, 0.13, 0.13],
+        "exponent": 48.0
+      }
+    }
+  ]
+}

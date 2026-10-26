@@ -1,0 +1,15 @@
+Credits for scenes/hw2/custom_bear_scene.json
+
+Bear model (bear-sp22.ply)
+  From UCSD CSE 125: https://cse125.ucsd.edu/data/bear.html
+
+Bear texture (TCom_Rock_CliffGranite4_header.jpg)
+  From Textures.com: https://www.textures.com
+
+Terrain (terrain.ply)
+  Made with 3D Map Generator's Terrain Maker: https://3d-map-generator.com/terrain-maker-3d/
+  Converted to PLY and texture coordinates added with LLM assistance
+
+Ground texture (aerial_grass_rock_diff_2k.jpg)
+  "Aerial Grass Rock" by Rob Tuytel, Poly Haven: https://polyhaven.com/a/aerial_grass_rock
+  License: CC0
