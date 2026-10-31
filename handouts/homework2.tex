@@ -905,11 +905,6 @@ In our code/scenes, a texture specifies $K_d$ if it exists. If the material has 
 
 We will use the \lstinline{rgba8_unorm_srgb} texture format. An annoying detail in computer graphics is that not only spatial locations live in many different spaces, color lives in many different spaces as well. One such space is called \emph{sRGB}, whereas most of our code so far assumes \emph{linear RGB}. Specifying the sRGB texture format automatically does the conversion from sRGB space to linear RGB for us. You don't need to do anything.
 
-On the Slang side, since we have set everything up, you can simply access the texture using
-\begin{lstlisting}
-    float3 Kd = Kd_texture.Sample(Kd_sampler, input.uv).rgb;
-\end{lstlisting}
-
 \paragraph{Your task.} As before, we have provided most of the host code, and you can focus on implementing the shaders. Remember to copy paste transformation stuff to \lstinline{hw2_7()} on the Python side, and then you can start implementing the shaders inside \lstinline{hw2_7.slang}.
 
 To test your code, use

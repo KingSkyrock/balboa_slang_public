@@ -1,6 +1,7 @@
 import argparse
 import hw1
 import hw2
+import hw3
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -89,6 +90,34 @@ if __name__ == "__main__":
     p.add_argument('scene')
     p.add_argument('-time', type=float, default=0)
     p.set_defaults(func=hw2.hw2_7)
+
+    # HW 3.1
+    p = subparsers.add_parser("3_1")
+    p.add_argument('scene')
+    p.set_defaults(func=hw3.hw3_1)
+    # HW 3.2
+    p = subparsers.add_parser("3_2")
+    p.add_argument('scene')
+    p.set_defaults(func=hw3.hw3_2)
+    # HW 3.3
+    p = subparsers.add_parser("3_3")
+    p.add_argument('scene')
+    p.set_defaults(func=hw3.hw3_3)
+    # HW 3.4
+    p = subparsers.add_parser("3_4")
+    p.add_argument('scene')
+    p.add_argument('-time', type=float, default=0)
+    p.set_defaults(func=hw3.hw3_4)
+    # HW 3.5
+    p = subparsers.add_parser("3_5")
+    p.add_argument('scene')
+    p.add_argument('-time', type=float, default=0)
+    p.set_defaults(func=hw3.hw3_5)
+    # HW 3.6
+    p = subparsers.add_parser("3_6")
+    p.add_argument('scene')
+    p.add_argument('-time', type=float, default=0)
+    p.set_defaults(func=hw3.hw3_6)
 
     args = parser.parse_args()
     args.func(args)

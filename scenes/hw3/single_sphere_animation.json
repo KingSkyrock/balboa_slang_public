@@ -1,0 +1,86 @@
+{
+    "duration": 6.0,
+    "camera": {
+        "fov_x": 90.0,
+        "transform": [
+            {"lookat": {
+                "position": [0.0, 0.5, 0.0],
+                "target": [0.0, 0.5, -1.0],
+                "up": [0.0, 1.0, 0.0]
+            }}
+        ]
+    },
+    "objects": [
+        {
+            "type": "sphere",
+            "center": [0.0, 0.0, -3.0],
+            "radius": 1.0,
+            "Kd": [0.9, 0.2, 0.2],
+            "Kr": [0.0, 0.0, 0.0],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [1.0, 0.5, 1.0]},
+                        {"rotate_z": [30]},
+                        {"translate": [-0.2, -0.2, -0.2]}
+                    ]
+                },
+                {
+                    "time": 1.0,
+                    "transform": [
+                        {"scale": [0.7, 1.0, 1.0]},
+                        {"rotate_z": [90]},
+                        {"translate": [0.4, 0.1, -0.2]}
+                    ]
+                },
+                {
+                    "time": 2.0,
+                    "transform": [
+                        {"scale": [1.2, 0.4, 1.0]},
+                        {"rotate_z": [150]},
+                        {"translate": [0.1, -0.45, -0.2]}
+                    ]
+                },
+                {
+                    "time": 3.0,
+                    "transform": [
+                        {"scale": [0.8, 0.9, 1.0]},
+                        {"rotate_z": [210]},
+                        {"translate": [-0.45, 0.15, -0.2]}
+                    ]
+                },
+                {
+                    "time": 4.0,
+                    "transform": [
+                        {"scale": [1.1, 0.55, 1.0]},
+                        {"rotate_z": [270]},
+                        {"translate": [-0.1, 0.35, -0.2]}
+                    ]
+                },
+                {
+                    "time": 5.0,
+                    "transform": [
+                        {"scale": [0.75, 1.1, 1.0]},
+                        {"rotate_z": [330]},
+                        {"translate": [0.35, -0.1, -0.2]}
+                    ]
+                },
+                {
+                    "time": 6.0,
+                    "transform": [
+                        {"scale": [1.0, 0.5, 1.0]},
+                        {"rotate_z": [390]},
+                        {"translate": [-0.2, -0.2, -0.2]}
+                    ]
+                }
+            ]
+        }
+    ],
+    "lights": [
+        {
+            "position": [-3.0, 4.0, 1.0],
+            "intensity": [120.0, 120.0, 120.0]
+        }
+    ]
+}
