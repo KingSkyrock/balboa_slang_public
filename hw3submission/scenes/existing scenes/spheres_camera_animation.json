@@ -1,0 +1,203 @@
+{
+    "duration": 8.0,
+    "camera": {
+        "fov_x": 90.0,
+        "transform_keyframes": [
+            {
+                "time": 0.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [0.0, 2.0, 7.0],
+                            "target": [0.0, 0.0, -3.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 2.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [6.0, 2.0, 3.0],
+                            "target": [0.0, 0.0, -3.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 4.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [0.0, 2.5, -9.0],
+                            "target": [0.0, 0.0, -3.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 6.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [-6.0, 2.0, 3.0],
+                            "target": [0.0, 0.0, -3.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            },
+            {
+                "time": 8.0,
+                "transform": [
+                    {
+                        "lookat": {
+                            "position": [0.0, 2.0, 7.0],
+                            "target": [0.0, 0.0, -3.0],
+                            "up": [0.0, 1.0, 0.0]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "objects": [
+        {
+            "type": "sphere",
+            "center": [0.0, 0.0, -3.0],
+            "radius": 1.0,
+            "Kd": [0.9, 0.2, 0.2],
+            "Kr": [0.0, 0.0, 0.0],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"scale": [1.0, 0.5, 1.0]},
+                        {"rotate_z": [30]},
+                        {"translate": [-0.2, -0.2, -0.2]}
+                    ]
+                },
+                {
+                    "time": 2.0,
+                    "transform": [
+                        {"scale": [0.7, 1.0, 1.0]},
+                        {"rotate_z": [120]},
+                        {"translate": [0.4, 0.2, -0.2]}
+                    ]
+                },
+                {
+                    "time": 4.0,
+                    "transform": [
+                        {"scale": [1.2, 0.4, 1.0]},
+                        {"rotate_z": [210]},
+                        {"translate": [0.0, -0.5, -0.2]}
+                    ]
+                },
+                {
+                    "time": 6.0,
+                    "transform": [
+                        {"scale": [0.8, 0.9, 1.0]},
+                        {"rotate_z": [300]},
+                        {"translate": [-0.5, 0.1, -0.2]}
+                    ]
+                },
+                {
+                    "time": 8.0,
+                    "transform": [
+                        {"scale": [1.0, 0.5, 1.0]},
+                        {"rotate_z": [390]},
+                        {"translate": [-0.2, -0.2, -0.2]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "sphere",
+            "center": [0.0, 0.0, -3.0],
+            "radius": 0.35,
+            "Kd": [0.2, 0.8, 0.3],
+            "Kr": [0.0, 0.0, 0.0],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"translate": [1.7, 0.0, 0.0]}
+                    ]
+                },
+                {
+                    "time": 2.0,
+                    "transform": [
+                        {"translate": [0.0, 1.3, 0.4]}
+                    ]
+                },
+                {
+                    "time": 4.0,
+                    "transform": [
+                        {"translate": [-1.7, 0.0, 0.0]}
+                    ]
+                },
+                {
+                    "time": 6.0,
+                    "transform": [
+                        {"translate": [0.0, -1.3, 0.4]}
+                    ]
+                },
+                {
+                    "time": 8.0,
+                    "transform": [
+                        {"translate": [1.7, 0.0, 0.0]}
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "sphere",
+            "center": [0.0, 0.0, -3.0],
+            "radius": 0.25,
+            "Kd": [0.2, 0.4, 0.95],
+            "Kr": [0.7, 0.7, 0.7],
+            "transform_keyframes": [
+                {
+                    "time": 0.0,
+                    "transform": [
+                        {"translate": [-1.2, -0.8, 0.8]}
+                    ]
+                },
+                {
+                    "time": 2.0,
+                    "transform": [
+                        {"translate": [0.5, 1.0, 0.8]}
+                    ]
+                },
+                {
+                    "time": 4.0,
+                    "transform": [
+                        {"translate": [1.2, -0.2, 0.8]}
+                    ]
+                },
+                {
+                    "time": 6.0,
+                    "transform": [
+                        {"translate": [-0.5, -1.0, 0.8]}
+                    ]
+                },
+                {
+                    "time": 8.0,
+                    "transform": [
+                        {"translate": [-1.2, -0.8, 0.8]}
+                    ]
+                }
+            ]
+        }
+    ],
+    "lights": [
+        {
+            "position": [-3.0, 4.0, 1.0],
+            "intensity": [120.0, 120.0, 120.0]
+        }
+    ]
+}

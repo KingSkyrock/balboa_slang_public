@@ -1,0 +1,19 @@
+Credits for scenes/hw3/custom_one_ring_to_rule_them_all.json
+
+The main subject of the scene is a large, golden ring.
+The top of the ring is the symbol of ChatGPT aka OpenAI.
+It overshadows a smaller golden ring intended to represent 
+the One Ring from J.R.R Tolkien's The Lord of the Rings books.
+I think you can infer the intended symbolism!
+
+Ring band and blossom (band.ply, blossom.ply)
+Made by Luke's friend Jeremy Gu (jeremygu@berkeley.edu).
+Jeremy is a UC Berkeley mathematics undergrad with an
+interest in computer graphics research. He is interested
+in potentially being a future graduate student at UCSD.
+
+The One Ring (the_one_ring_lord_of_the_rings.ply)
+"The One Ring (Lord of The Rings)" by Yanez Designs
+https://sketchfab.com/3d-models/the-one-ring-lord-of-the-rings-39eb401be92c49d39520fadd5ecff8d3
+
+The walls are made from the provided quad meshes. scenes/hw3/meshes/quad_mesh.json

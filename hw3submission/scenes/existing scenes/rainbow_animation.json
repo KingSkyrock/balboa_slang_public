@@ -1,0 +1,4580 @@
+{
+  "background": [
+    0.05,
+    0.07,
+    0.12
+  ],
+  "max_depth": 12,
+  "duration": 12.0,
+  "camera": {
+    "fov_x": 75.0,
+    "transform_keyframes": [
+      {
+        "time": 0.0,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                0.0,
+                1.55,
+                2.2
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 1.5,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                5.444722215136416,
+                1.8,
+                -0.05527778486358326
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 3.0,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                7.7,
+                1.55,
+                -5.499999999999999
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 4.5,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                5.444722215136417,
+                1.3,
+                -10.944722215136416
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 6.0,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                9.42978035343462e-16,
+                1.55,
+                -13.2
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 7.5,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                -5.444722215136416,
+                1.8,
+                -10.944722215136418
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 9.0,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                -7.7,
+                1.55,
+                -5.500000000000002
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 10.5,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                -5.444722215136418,
+                1.3,
+                -0.05527778486358503
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "time": 12.0,
+        "transform": [
+          {
+            "lookat": {
+              "position": [
+                -1.885956070686924e-15,
+                1.5499999999999998,
+                2.2
+              ],
+              "target": [
+                0,
+                0,
+                -5.5
+              ],
+              "up": [
+                0,
+                1,
+                0
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "objects": [
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        -1003.05,
+        -5.5
+      ],
+      "radius": 1000,
+      "Kd": [
+        0.14,
+        0.15,
+        0.2
+      ],
+      "Kr": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        -5.5
+      ],
+      "radius": 0.87,
+      "Kd": [
+        0.025,
+        0.035,
+        0.05
+      ],
+      "Kr": [
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.98,
+        0.255,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                0.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                360.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.98,
+        0.617,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                30.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                390.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.98,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                60.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                420.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.617,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                90.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                450.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.255,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                120.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                480.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.255,
+        0.98,
+        0.617
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                150.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                510.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.255,
+        0.98,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                180.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                540.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.255,
+        0.617,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                210.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                570.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.255,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                240.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                600.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.617,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                270.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                630.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.98,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                300.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                660.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.185,
+      "Kd": [
+        0.98,
+        0.255,
+        0.617
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                330.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.26,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                690.0
+              ]
+            },
+            {
+              "rotate_x": [
+                12
+              ]
+            },
+            {
+              "rotate_y": [
+                10
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.878,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                28.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -332.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.607,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                50.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -309.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.335,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                73.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -287.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.255,
+        0.98,
+        0.447
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                95.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -264.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.255,
+        0.98,
+        0.719
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                118.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -242.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.255,
+        0.969,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                140.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -219.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.255,
+        0.697,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                163.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -197.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.255,
+        0.425,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                185.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -174.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.356,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                208.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -152.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.628,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                230.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -129.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.9,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                253.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -107.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.98,
+        0.255,
+        0.788
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                275.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -84.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.98,
+        0.255,
+        0.516
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                298.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -62.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.98,
+        0.266,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                320.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -39.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.98,
+        0.538,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                343.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                -17.0
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.158,
+      "Kd": [
+        0.98,
+        0.81,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                365.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                1.85,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                5.5
+              ]
+            },
+            {
+              "rotate_x": [
+                56
+              ]
+            },
+            {
+              "rotate_y": [
+                -15
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.255,
+        0.98,
+        0.458
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                11.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                731.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.255,
+        0.98,
+        0.675
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                29.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                749.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.255,
+        0.98,
+        0.893
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                47.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                767.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.255,
+        0.849,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                65.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                785.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.255,
+        0.632,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                83.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                803.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.255,
+        0.414,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                101.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                821.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.313,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                119.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                839.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.53,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                137.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                857.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.748,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                155.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                875.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.965,
+        0.255,
+        0.98
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                173.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                893.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.98,
+        0.255,
+        0.777
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                191.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                911.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.98,
+        0.255,
+        0.559
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                209.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                929.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.98,
+        0.255,
+        0.342
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                227.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                947.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.98,
+        0.385,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                245.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                965.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.98,
+        0.603,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                263.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                983.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.98,
+        0.82,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                281.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                1001.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.922,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                299.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                1019.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.704,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                317.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                1037.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.487,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                335.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                1055.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sphere",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0.125,
+      "Kd": [
+        0.269,
+        0.98,
+        0.255
+      ],
+      "Kr": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "transform_keyframes": [
+        {
+          "time": 0.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                353.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        },
+        {
+          "time": 12.0,
+          "transform": [
+            {
+              "translate": [
+                2.33,
+                0,
+                0
+              ]
+            },
+            {
+              "rotate_z": [
+                1073.0
+              ]
+            },
+            {
+              "rotate_x": [
+                104
+              ]
+            },
+            {
+              "rotate_y": [
+                20
+              ]
+            },
+            {
+              "translate": [
+                0,
+                0,
+                -5.5
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lights": [
+    {
+      "position": [
+        -3.4,
+        5,
+        1.5
+      ],
+      "intensity": [
+        110,
+        95,
+        90
+      ]
+    },
+    {
+      "position": [
+        4.5,
+        3.0,
+        -4
+      ],
+      "intensity": [
+        65,
+        95,
+        135
+      ]
+    },
+    {
+      "position": [
+        0,
+        5,
+        -10
+      ],
+      "intensity": [
+        95,
+        80,
+        110
+      ]
+    }
+  ]
+}
