@@ -171,7 +171,6 @@ bool is_ray_intersect(float3 o, float3 d, float t_min, float t_max,
 
             if (hit) {
                 if (closest_t < 0 || t_hit < closest_t) {
-                    float3 hit_point = o_obj + t_hit * d_obj;
                     closest_t = t_hit;
                     closest_Kd = shape.Kd;
                     closest_Kr = shape.Kr;
