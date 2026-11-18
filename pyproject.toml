@@ -10,5 +10,7 @@ dependencies = [
     "scipy",
     "pillow",
     "matplotlib",
-    "trimesh"
+    "trimesh",
+    "imageio",
+    "imageio-ffmpeg"
 ]

@@ -2,6 +2,7 @@ import argparse
 import hw1
 import hw2
 import hw3
+import hw4
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -118,6 +119,22 @@ if __name__ == "__main__":
     p.add_argument('scene')
     p.add_argument('-time', type=float, default=0)
     p.set_defaults(func=hw3.hw3_6)
+
+    # HW 4
+    for part, func in [
+        ("4_1", hw4.hw4_1),
+        ("4_2", hw4.hw4_2),
+        ("4_3", hw4.hw4_3),
+        ("4_4", hw4.hw4_4),
+        ("4_5", hw4.hw4_5),
+        ("4_6", hw4.hw4_6)
+    ]:
+        p = subparsers.add_parser(part)
+        p.add_argument('scene')
+        p.add_argument('-output', type=str, default=argparse.SUPPRESS)
+        p.add_argument('-duration', type=float, default=6.0)
+        p.add_argument('-fps', type=int, default=30)
+        p.set_defaults(func=func)
 
     args = parser.parse_args()
     args.func(args)

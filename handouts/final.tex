@@ -1,0 +1,56 @@
+\input{preamble}
+
+\begin{document}
+
+\header{5}{Final Project: Balboa++}
+
+In the final project, we will extend the homeworks we built on earlier, implement advanced graphics techniques of your choice, and make beautiful animation!
+
+Anything related to computer graphics is welcome. If you are not sure, ask us before you start implementing. Your final output should be an animation. It can be just camera movement but it cannot be a static image.
+
+\paragraph{Teaming.} Same as the homework. Up to two people.
+
+\paragraph{Grading.} We will grade you based on both aesthetics and technical sophistication. We'll take a ``soft max'' between the two: you can have poor aesthetic and strong technical sophistication, or you can have strong aesthetics but poor technical sophistication. We will slightly lean towards technical sophistication because this is a computer science class. A completed small project is better than an incomplete large project. 
+
+\paragraph{Deliverables.} Send us your code and a short report describing what you have learned on Canvas, and the animation you produced (can be a screen recording). Please DO NOT use language models to write or even polish the report. I prefer a short, to-the-point written report over a long-winded language models written ones. I can usually tell, so be careful. Use pictures and figures to illustrate your ideas.
+We will use the time and location of the final exam for an in person presentation session. Please present your final project to the TAs/tutors. They will ask you questions about your project during the process.
+In both your report and your presentation, try to convince us that your implementation is correct. For example, include comparisons againsts simpler method, inputs with analytical solutions, or controlled experiments.
+
+\paragraph{Language model policy.} Please avoid using language models for implementing anything in your final project. Using language models as a search engine is fine, though I would also avoid using language models for coming up with project idea itself: this can easily lead to idea homogenization and I don't want to grade 50 same final projects. Asking language models about the jargons I used below is fine, though you can also just ask us.
+If you use language models in your project, detail your usage and report it. As usual, simply saying ``I used ChatGPT'' is not good enough.
+
+\section{Ideas}
+
+Here are some potential ideas. They also give you a rough sense of the difficulty/scale you should aim for. The order is arbitrary. You can also mix-and-match these ideas. If some of these terms are not familiar, ask us or search a bit.
+
+\paragraph{Path tracing.} Extend your Homework 3 ray tracer to handle path tracing with global illumination. A good reference is the \href{https://raytracing.github.io/}{Ray Tracing in One Weekend} book. You need to read until the end of the 3rd book to reach the part where it builds a proper path tracer that handles global illumination.
+
+\paragraph{Volume rendering.} Build a 3D renderer based on either Homework 2 or Homework 3 that can handle volumetric objects using ray marching. My volume rendering slides \href{https://cseweb.ucsd.edu/~tzli/cse167/fa2025/lectures/27_volume_rendering.pdf}{from 2025} can be useful. You only need to handle emissive volumes and don't need to handle scattering. Perhaps use 3D Perlin noise to generate cloud shaped objects.
+
+\paragraph{Physically-based materials + environment lighting.} Extend your Homework 2 or 3 by implementing a Cook-Torrance microfacet BRDF with importance sampling, lit by an HDR environment light. For Homework 2 extension, you can ignore the visibility (doesn't mean it'll be easier!).
+
+\paragraph{Subdivision surfaces.} Extend your Homework 2 or 3 to handle Catmull-Clark or Loop subdivision surfaces. Preprocessed meshes is good enough.
+
+\paragraph{Cascaded shadow mapping + Percentage Closer Filtering.} Extend your Homework 2 to handle shadows using cascaded shadow mapping with percentage closer filtering. (Normal shadow mapping is too easy. ; ) My shadow mapping slides \href{https://cseweb.ucsd.edu/~tzli/cse167/fa2025/lectures/15_shadow.pdf}{from 2025} can be useful.
+
+\paragraph{Fast vector graphics rasterization.} Extend your Homework 1 to handle tens of thousands, or even millions of Bezier strokes and objects (think of Google Maps). You may need to either make use of acceleration structures or graphics hardware. A good reference is Nehab and Hoppe's \href{https://hhoppe.com/proj/ravg/}{Random-access rendering of general vector graphics}. You can replace their data structure with a bounding volume hierarchy. A more standard way is to use something called \emph{implicitization} to convert curves into implicit functions, but the support for strokes is more complicated. For the implicitization approach, read Kokojima et al.'s \href{https://dl.acm.org/doi/10.1145/1179849.1179997}{SIGGRAPH sketch}, which itself is based on Loop and Blinn's classical \href{https://dl.acm.org/doi/10.1145/1073204.1073303}{2005 paper}.
+
+\paragraph{Signed distance function rendering.} Build a \href{https://iquilezles.org/}{Inigo Quilez} style scene and animation using ray marching techniques.
+
+\paragraph{Stylized rendering.} Extend your Homework 2 or 3 by implementing a non-photorealistic rendering that supports contour rendering, hatching, cel-shading, among other things.
+
+\paragraph{Mesh deformation.} Implement the ``As-Rigid-As-Possible'' 2D deformation method. Read the \href{https://www-ui.is.s.u-tokyo.ac.jp/~takeo/papers/takeo_jgt09_arapFlattening.pdf}{article} from Takeo and Yuki Igarashi. You can implement the solver in Numpy. Visualize the result by either your Homework 1 or Homework 2 code. Even better make it interactive.
+
+\paragraph{Mesh simplification and level of detail.} Implement the \href{https://www.cs.cmu.edu/~garland/Papers/quadrics.pdf}{Quadric Error Metric} mesh simplification algorithm, and modify your Homework 2 renderer to switch to a lower resolution mesh when the mesh is far away to save rendering bandwidth. \href{https://stanford-cs248.github.io/Cardinal3D/meshedit/global/simplify}{Here} is a related homework at Stanford.
+
+\paragraph{Rigging and skinning.} Implement a rigged character animation with linear-blend skinning and visualize it using your Homework 2. My slides \href{https://cseweb.ucsd.edu/~tzli/cse167/fa2025/lectures/23_rigging_skinning_blendshapes.pdf}{from 2025} might be helpful.
+
+\paragraph{Self-collision.} Add self collision to your Homework 4. This \href{https://cs184.eecs.berkeley.edu/fa26/hw/hw4/part4/}{Berkeley course} has some good reference on handling collision in particle-based methods.
+
+\paragraph{Rigid-body simulation.} Add rigid body simulation to your Homework 4. See \href{https://matthias-research.github.io/pages/tenMinutePhysics/index.html}{Ten Minutes Physics} for the reference (tutorials 22).
+
+\paragraph{Fluid simulation.} Read Jos Stam's GDC note ``\href{https://www.dgp.toronto.edu/public_user/stam/reality/Research/pdf/GDC03.pdf}{Real-Time Fluid Dynamics for Games}'' and implement his classical Stable Fluids algorithm in Slang. The GDC note used the ``Gauss-Seidel'' algorithm for solving the Poisson equation. You might need to use Jacobi iteration instead for GPU implementation. (Or a Red-Black Gauss-Seidel which is not that hard for a 2D grid.)
+
+
+
+\end{document}

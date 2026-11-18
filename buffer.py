@@ -35,6 +35,9 @@ def structured_buffer_from_numpy(device, arr):
 
 def structured_typed_buffer_from_numpy(device, arr, dtype):
     arr = np.ascontiguousarray(arr)
+    # Slang doesn't allow 0 size buffers. Creating a dummy.
+    if len(arr) == 0:
+        arr = np.zeros((1, *arr.shape[1:]), dtype=arr.dtype)
     tensor = spy.Tensor.empty(
         device,
         shape=(len(arr),),
