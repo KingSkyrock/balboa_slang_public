@@ -68,7 +68,7 @@ void detect_collision(uint tid : SV_DispatchThreadID,
             contact_planes[tid] = contact_plane;
         }
     }
-    min_sdf = contact_margin + collision_distance;;
+    min_sdf = contact_margin + collision_distance;
     for (int i = 0; i < num_spheres; i++) {
         float4 sphere = spheres[i];
         float3 center = sphere.xyz;
