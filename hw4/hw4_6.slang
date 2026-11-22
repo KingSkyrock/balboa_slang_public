@@ -130,12 +130,16 @@ void detect_collision(uint tid : SV_DispatchThreadID,
         }
     }
 
+    float tri_min_dist = contact_margin + collision_distance;
+    bool tri_found = false;
+    float4 tri_plane = float4(0, 0, 0, 0);
+
     uint node_index = 0;
     uint end_index = uint(bvh_nodes[node_index].next_index);
     while (node_index < end_index) {
         BVHNode node = bvh_nodes[node_index];
 
-        if (point_aabb_distance(p, node.bbox_min, node.bbox_max) > min_dist) {
+        if (point_aabb_distance(p, node.bbox_min, node.bbox_max) > tri_min_dist) {
             node_index = uint(node.next_index);
             continue;
         }
@@ -166,8 +170,9 @@ void detect_collision(uint tid : SV_DispatchThreadID,
                 }
             }
 
-            if (closest_tri_dist < min_dist && closest_tri_dist != -1) {
-                min_dist = closest_tri_dist;
+            if (closest_tri_dist < tri_min_dist && closest_tri_dist != -1) {
+                tri_min_dist = closest_tri_dist;
+                tri_found = true;
                 float3 v0 = mesh_vertices[closest_tri.x];
                 float3 v1 = mesh_vertices[closest_tri.y];
                 float3 v2 = mesh_vertices[closest_tri.z];
@@ -189,11 +194,18 @@ void detect_collision(uint tid : SV_DispatchThreadID,
                 }
                 // Use ng as the normal of our contact plane.
                 float d = dot(ng, closest_tri_point);
-                contact_planes[tid] = float4(ng, d + collision_distance);
+                tri_plane = float4(ng, d);
             }
 
         }
         node_index++;
     }
 
+    if (tri_found) {
+        float sdf = SDF_plane(p, tri_plane);
+        if (sdf < min_dist) {
+            min_dist = sdf;
+            contact_planes[tid] = float4(tri_plane.xyz, tri_plane.w + collision_distance);
+        }
+    }
 }

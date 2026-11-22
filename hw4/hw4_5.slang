@@ -107,6 +107,10 @@ void project_constraints(uint tid : SV_DispatchThreadID,
     float3 p = positions_in[tid];
     float3 old_p = old_positions[tid];
     float w = inv_masses[tid];
+    if (w == 0) {
+        positions_out[tid] = p;
+        return;
+    }
 
     float count = 0;
     float3 other_correction = float3(0, 0, 0);
@@ -117,6 +121,8 @@ void project_constraints(uint tid : SV_DispatchThreadID,
         other_correction += compute_correction(p, positions_in[n], w, inv_masses[n], rest_length);
         count++;
     }
+
+    p = p + (count == 0 ? 0 : other_correction / count);
 
     float4 plane = contact_planes[tid];
     float3 n = plane.xyz;
@@ -134,7 +140,7 @@ void project_constraints(uint tid : SV_DispatchThreadID,
         contact_correction -= normalize(tangent) * kinetic_friction * penetration; 
     }
 
-    positions_out[tid] = p + contact_correction + (count == 0 ? 0 : other_correction / count);
+    positions_out[tid] = p + contact_correction;
 }
 
 [shader("compute")]
